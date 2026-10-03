@@ -1,0 +1,234 @@
+{
+  "metadata": {
+    "title": "TODO copy",
+    "description": "TODO copy"
+  },
+  "nav": {
+    "label": "TODO copy",
+    "portfolio": "TODO copy",
+    "process": "TODO copy",
+    "pricing": "TODO copy",
+    "about": "TODO copy",
+    "openMenu": "TODO copy",
+    "closeMenu": "TODO copy"
+  },
+  "localeSwitcher": {
+    "label": "TODO copy",
+    "pt": "PT",
+    "en": "EN"
+  },
+  "header": {
+    "whatsappCta": "TODO copy",
+    "whatsappCtaShort": "TODO copy"
+  },
+  "hero": {
+    "label": "TODO copy",
+    "headlineStart": "TODO copy",
+    "headlineEmphasis": "TODO copy",
+    "headlineEnd": "TODO copy",
+    "subheadline": "TODO copy",
+    "ctaPrimary": "TODO copy",
+    "ctaSecondary": "TODO copy",
+    "facts": {
+      "one": "TODO copy",
+      "two": "TODO copy",
+      "three": "TODO copy"
+    },
+    "visualAlt": "TODO copy"
+  },
+  "portfolio": {
+    "label": "TODO copy",
+    "title": "TODO copy",
+    "support": "TODO copy",
+    "viewSite": "TODO copy",
+    "projects": {
+      "brunaMagalhaes": {
+        "segment": "TODO copy",
+        "type": "TODO copy",
+        "alt": "TODO copy"
+      },
+      "alandoDigital": {
+        "segment": "TODO copy",
+        "type": "TODO copy",
+        "alt": "TODO copy"
+      }
+    }
+  },
+  "process": {
+    "label": "TODO copy",
+    "title": "TODO copy",
+    "steps": {
+      "s1": {
+        "title": "TODO copy",
+        "description": "TODO copy"
+      },
+      "s2": {
+        "title": "TODO copy",
+        "description": "TODO copy"
+      },
+      "s3": {
+        "title": "TODO copy",
+        "description": "TODO copy"
+      },
+      "s4": {
+        "title": "TODO copy",
+        "description": "TODO copy"
+      }
+    },
+    "brandFirst": {
+      "title": "TODO copy",
+      "body": "TODO copy"
+    },
+    "ai": {
+      "title": "TODO copy",
+      "body": "TODO copy"
+    }
+  },
+  "pricing": {
+    "label": "TODO copy",
+    "title": "TODO copy",
+    "from": "TODO copy",
+    "packages": {
+      "essencial": {
+        "name": "TODO copy",
+        "items": {
+          "i1": "TODO copy",
+          "i2": "TODO copy",
+          "i3": "TODO copy"
+        },
+        "cta": "TODO copy"
+      },
+      "profissional": {
+        "name": "TODO copy",
+        "items": {
+          "i1": "TODO copy",
+          "i2": "TODO copy",
+          "i3": "TODO copy"
+        },
+        "cta": "TODO copy"
+      }
+    },
+    "notes": {
+      "complexity": "TODO copy",
+      "domain": "TODO copy",
+      "extras": "TODO copy"
+    }
+  },
+  "about": {
+    "label": "TODO copy",
+    "title": "TODO copy",
+    "body": "TODO copy",
+    "credentials": {
+      "experience": "TODO copy",
+      "stack": "TODO copy",
+      "companies": "TODO copy"
+    },
+    "linkedin": "TODO copy",
+    "photoAlt": "TODO copy",
+    "aiLine": "TODO copy"
+  },
+  "projects": {
+    "label": "TODO copy",
+    "title": "TODO copy",
+    "buildToLearn": "TODO copy",
+    "items": {
+      "gasolinha": {
+        "type": "TODO copy",
+        "description": "TODO copy"
+      },
+      "linkToWhatsapp": {
+        "type": "TODO copy",
+        "description": "TODO copy"
+      },
+      "santoRosario": {
+        "type": "TODO copy",
+        "description": "TODO copy"
+      },
+      "qrCodeGenerator": {
+        "type": "TODO copy",
+        "description": "TODO copy"
+      },
+      "poupensa": {
+        "type": "TODO copy",
+        "description": "TODO copy"
+      }
+    }
+  },
+  "testimonials": {
+    "label": "TODO copy",
+    "title": "TODO copy"
+  },
+  "faq": {
+    "label": "TODO copy",
+    "title": "TODO copy",
+    "items": {
+      "q1": {
+        "question": "TODO copy",
+        "answer": "TODO copy"
+      },
+      "q2": {
+        "question": "TODO copy",
+        "answer": "TODO copy"
+      },
+      "q3": {
+        "question": "TODO copy",
+        "answer": "TODO copy"
+      },
+      "q4": {
+        "question": "TODO copy",
+        "answer": "TODO copy"
+      },
+      "q5": {
+        "question": "TODO copy",
+        "answer": "TODO copy"
+      },
+      "q6": {
+        "question": "TODO copy",
+        "answer": "TODO copy"
+      }
+    }
+  },
+  "finalCta": {
+    "headline": "TODO copy",
+    "whatsapp": "TODO copy",
+    "linkedin": "TODO copy",
+    "note": "TODO copy"
+  },
+  "footer": {
+    "copyright": "TODO copy",
+    "madeWith": "TODO copy"
+  },
+  "whatsapp": {
+    "messages": {
+      "default": "Olá, vi seu site e gostaria de falar sobre a construção de uma Landing Page pra minha marca",
+      "pricing-essencial": "TODO copy",
+      "pricing-profissional": "TODO copy"
+    }
+  },
+  "notFound": {
+    "title": "TODO copy",
+    "backHome": "TODO copy"
+  },
+  "preview": {
+    "title": "Fundação: tokens e primitivos",
+    "note": "Página temporária para revisão. Some antes da Etapa 03.",
+    "colors": "01 / cores",
+    "type": "02 / tipografia",
+    "buttons": "03 / botões",
+    "onAccent": "sobre o verde",
+    "primitives": "04 / accordion e separator",
+    "sampleHeadlineStart": "Uma página com a",
+    "sampleHeadlineEmphasis": "cara",
+    "sampleHeadlineEnd": "da sua marca",
+    "sampleBody": "Texto de corpo em Hanken Grotesk, para conferir a medida de leitura e o ritmo das linhas em parágrafos mais longos.",
+    "sampleLabel": "02 / portfólio",
+    "primary": "Primário",
+    "secondary": "Secundário",
+    "ghost": "Ghost",
+    "onAccentButton": "Sobre o verde",
+    "price": "Preço",
+    "accordionQuestion": "Pergunta de exemplo",
+    "accordionAnswer": "Resposta de exemplo, só para ver o ícone girar e o conteúdo abrir.",
+    "accordionQuestion2": "Outra pergunta"
+  }
+}
