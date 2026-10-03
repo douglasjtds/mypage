@@ -40,6 +40,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# impeccable engine binary (14MB, platform-specific; the launcher downloads it on demand)
+/.claude/skills/impeccable/scripts/bin/
+
 # playwright
 /test-results/
 /playwright-report/

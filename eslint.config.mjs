@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Versioned skills (vendored dependencies, not project code).
+    ".claude/**",
   ]),
 ]);
 
