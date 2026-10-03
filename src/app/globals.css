@@ -1,1 +1,194 @@
 @import "tailwindcss";
+
+/* Tokens: DESIGN-GUIDELINES 1, 4 e 5. Definidos uma vez aqui. */
+:root {
+  --paper: #f5f2ea;
+  --surface: #ede8dc;
+  --raised: #fbfaf6;
+  --ink: #151815;
+  --ink-muted: #545950;
+  --line: #d9d3c4;
+  --accent: #1e4636;
+  --accent-hover: #163428;
+  --accent-soft: #dce5dc;
+  --on-accent: #f5f2ea;
+  --on-accent-muted: #b9cbbe;
+
+  --focus-ring: var(--accent);
+}
+
+/* Raio, sombra e curvas: sempre emitidos como variáveis (static) para uso em CSS. */
+@theme static {
+  --radius-*: initial;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+
+  --shadow-*: initial;
+  --shadow-window: 0 1px 0 var(--line), 0 24px 48px -24px rgb(21 24 21 / 0.18);
+
+  --container-content: 80rem;
+
+  --ease-*: initial;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+/* Sobre fundo verde, o anel de foco passa para --on-accent. */
+[data-surface="accent"] {
+  --focus-ring: var(--on-accent);
+}
+
+@theme inline {
+  /* Apaga a paleta padrão do Tailwind: só as cores do projeto existem. */
+  --color-*: initial;
+  --color-transparent: transparent;
+  --color-current: currentColor;
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-raised: var(--raised);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-soft: var(--accent-soft);
+  --color-on-accent: var(--on-accent);
+  --color-on-accent-muted: var(--on-accent-muted);
+
+  --font-display: var(--font-instrument-serif), Georgia, serif;
+  --font-sans: var(--font-hanken-grotesk), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+
+  --text-display-xl: clamp(3rem, 7.5vw, 6.5rem);
+  --text-display-xl--line-height: 0.95;
+  --text-display-xl--letter-spacing: -0.02em;
+  --text-display-l: clamp(2.25rem, 4.5vw, 3.75rem);
+  --text-display-l--line-height: 1;
+  --text-display-l--letter-spacing: -0.015em;
+  --text-display-m: clamp(1.75rem, 3vw, 2.5rem);
+  --text-display-m--line-height: 1.1;
+  --text-display-m--letter-spacing: -0.01em;
+  --text-body-l: 1.25rem;
+  --text-body-l--line-height: 1.5;
+  --text-body: 1.0625rem;
+  --text-body--line-height: 1.6;
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.5;
+  --text-label: 0.75rem;
+  --text-label--line-height: 1.4;
+  --text-label--letter-spacing: 0.02em;
+
+  --animate-accordion-down: accordion-down 200ms var(--ease-out);
+  --animate-accordion-up: accordion-up 150ms var(--ease-out);
+  --animate-sheet-in-right: sheet-in-right 250ms var(--ease-out);
+  --animate-sheet-out-right: sheet-out-right 200ms var(--ease-out);
+  --animate-sheet-in-top: sheet-in-top 250ms var(--ease-out);
+  --animate-sheet-out-top: sheet-out-top 200ms var(--ease-out);
+  --animate-fade-in: fade-in 250ms var(--ease-out);
+  --animate-fade-out: fade-out 200ms var(--ease-out);
+}
+
+@layer base {
+  html {
+    background-color: var(--paper);
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: var(--accent-soft);
+    color: var(--ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+  }
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+  to {
+    height: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes sheet-in-right {
+  from {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes sheet-out-right {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes sheet-in-top {
+  from {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes sheet-out-top {
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+/*
+ * Movimento reduzido: desliga animações de entrada e movimentos por transform.
+ * Transições de cor continuam (são definidas sem transform nos componentes).
+ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, opacity !important;
+  }
+}

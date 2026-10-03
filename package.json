@@ -12,9 +12,15 @@
     "capture": "node -e \"console.error('pnpm capture: ainda não implementado. O script scripts/capture-portfolio.ts chega na Etapa 04.'); process.exit(1)\""
   },
   "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.50.0",
     "next": "16.3.8",
+    "next-intl": "^4.14.9",
+    "radix-ui": "^1.6.7",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "tailwind-merge": "^3.7.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.63.0",
