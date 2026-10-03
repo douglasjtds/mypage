@@ -495,8 +495,8 @@ Entrega: URL publicada, resultados do Lighthouse em produção, pendências.
 | Etapa | Status | Data | Commit | Pendências |
 |---|---|---|---|---|
 | 00 Bootstrap | concluída | 2026-10-03 | | Next 16.3.8, pnpm 12.8.1 (brew). `pnpm test` só funciona após a Etapa 01 (Playwright). `pnpm-workspace.yaml` bloqueia build do sharp; rever na Etapa 04 |
-| 01 Skills | aguardando gate | 2026-10-03 | | Instalação via flags não interativas (impeccable `--project --providers=claude`; skills CLI `--copy`). Playwright 1.63.0. PRODUCT.md completo na raiz (exceção à regra de raiz, aprovada). `.claude/**` fora do ESLint. `skills-lock.json` versionado. Hooks do impeccable só locais (`settings.local.json`). Instalação global acidental removida. Pendente: confirmar se o binário do impeccable (14MB) vai para o `.gitignore` |
-| 02 Fundação | a fazer | | | |
+| 01 Skills | concluída | 2026-10-03 | | Instalação via flags não interativas (impeccable `--project --providers=claude`; skills CLI `--copy`). Playwright 1.63.0. PRODUCT.md completo na raiz (exceção à regra de raiz, aprovada). `.claude/**` fora do ESLint. `skills-lock.json` versionado. Hooks do impeccable só locais (`settings.local.json`). Instalação global acidental removida. Pendente: confirmar se o binário do impeccable (14MB) vai para o `.gitignore` |
+| 02 Fundação | aguardando gate | 2026-10-03 | | next-intl 4.14.9, shadcn (radix) com clsx + tailwind-merge no lugar do pacote `cn` e sem `tw-animate-css` (keyframes próprios). Paleta padrão do Tailwind apagada (`--color-*: initial`). Cookie `NEXT_LOCALE` gravado sem redirecionar. `@parcel/watcher` e `@swc/core` com build bloqueado no `pnpm-workspace.yaml`. Pendente: apagar `src/app/[locale]/preview/` e as chaves `preview` após o gate; `height` dos screenshots vem na Etapa 04; URL do Poupensa |
 | 03 Copy PT/EN | a fazer | | | |
 | 04 Captura do portfólio | a fazer | | | |
 | 05 Header + Footer | a fazer | | | |
