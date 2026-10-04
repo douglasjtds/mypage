@@ -1,235 +1,213 @@
 {
   "metadata": {
-    "title": "TODO copy",
-    "description": "TODO copy"
+    "title": "Douglas Tertuliano · Landing pages built on your brand",
+    "description": "Landing pages for freelancers and small businesses, built by a developer with 8 years of experience. Based on your visual identity and delivered in 5 to 10 business days."
+  },
+  "a11y": {
+    "newTab": "(opens in a new tab)"
   },
   "nav": {
-    "label": "TODO copy",
-    "portfolio": "TODO copy",
-    "process": "TODO copy",
-    "pricing": "TODO copy",
-    "about": "TODO copy",
-    "openMenu": "TODO copy",
-    "closeMenu": "TODO copy"
+    "label": "Main navigation",
+    "portfolio": "Work",
+    "process": "How it works",
+    "pricing": "Pricing",
+    "about": "About",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
   },
   "localeSwitcher": {
-    "label": "TODO copy",
+    "label": "Language",
     "pt": "PT",
     "en": "EN"
   },
   "header": {
-    "whatsappCta": "TODO copy",
-    "whatsappCtaShort": "TODO copy"
+    "whatsappCta": "Chat on WhatsApp",
+    "whatsappCtaShort": "WhatsApp"
   },
   "hero": {
-    "label": "TODO copy",
-    "headlineStart": "TODO copy",
-    "headlineEmphasis": "TODO copy",
-    "headlineEnd": "TODO copy",
-    "subheadline": "TODO copy",
-    "ctaPrimary": "TODO copy",
-    "ctaSecondary": "TODO copy",
+    "label": "01 / custom landing pages",
+    "headline": "A landing page built on <em>your</em> brand, not a template.",
+    "subheadline": "I'm Douglas, a developer with 8 years of experience. I build your page on the identity you already have and deliver it in 5 to 10 business days, ready to bring in WhatsApp messages.",
+    "ctaPrimary": "Message me on WhatsApp",
+    "ctaSecondary": "See my work",
     "facts": {
-      "one": "TODO copy",
-      "two": "TODO copy",
-      "three": "TODO copy"
+      "one": "8 years writing code",
+      "two": "5 to 10 business days",
+      "three": "English and Portuguese"
     },
-    "visualAlt": "TODO copy"
+    "visualAlt": "Section of the landing page Douglas built for nutritionist Bruna Magalhães"
   },
   "portfolio": {
-    "label": "TODO copy",
-    "title": "TODO copy",
-    "support": "TODO copy",
-    "viewSite": "TODO copy",
+    "label": "02 / work",
+    "title": "Live pages for real clients",
+    "support": "Each one started from the client's own brand. Open the site to see the full page.",
+    "viewSite": "view site",
     "projects": {
       "brunaMagalhaes": {
-        "segment": "TODO copy",
-        "type": "TODO copy",
-        "alt": "TODO copy"
+        "segment": "nutrition",
+        "type": "service landing page",
+        "alt": "Full-page view of nutritionist Bruna Magalhães's website"
       },
       "alandoDigital": {
-        "segment": "TODO copy",
-        "type": "TODO copy",
-        "alt": "TODO copy"
+        "segment": "branding agency",
+        "type": "one-page company site",
+        "alt": "Full-page view of the Alando Digital agency website"
       }
     }
   },
   "process": {
-    "label": "TODO copy",
-    "title": "TODO copy",
+    "label": "03 / how it works",
+    "title": "From first message to live page",
     "steps": {
       "s1": {
-        "title": "TODO copy",
-        "description": "TODO copy"
+        "title": "A chat on WhatsApp",
+        "description": "Tell me what you do, who the page is for and what you need it to do. From there I send you a price and a timeline."
       },
       "s2": {
-        "title": "TODO copy",
-        "description": "TODO copy"
+        "title": "Your brand material",
+        "description": "Logo, color palette, brand guidelines, photos, copy: send whatever you have. Anything missing, we sort out together."
       },
       "s3": {
-        "title": "TODO copy",
-        "description": "TODO copy"
+        "title": "Build and revisions",
+        "description": "I build the page and send you a preview link. Three rounds of revisions are included before it goes live."
       },
       "s4": {
-        "title": "TODO copy",
-        "description": "TODO copy"
+        "title": "Launch",
+        "description": "The page goes live on a .vercel.app address or on your own domain. Then all you do is share the link."
       }
     },
     "brandFirst": {
-      "title": "TODO copy",
-      "body": "TODO copy"
+      "title": "Your brand leads",
+      "body": "If you already have a visual identity, the page is built entirely on it. The more material you send, the more the page looks like you, and the less it looks like a template."
     },
     "ai": {
-      "title": "TODO copy",
-      "body": "TODO copy"
+      "title": "Where AI fits in",
+      "body": "I use AI to speed up parts of the work, like first drafts and repetitive code. The design decisions, the code review and the final result are mine. That's how the timeline stays short without cutting corners on the finish."
     }
   },
   "pricing": {
-    "label": "TODO copy",
-    "title": "TODO copy",
-    "from": "TODO copy",
+    "label": "04 / pricing",
+    "title": "You see the price before we talk",
+    "from": "from",
     "packages": {
       "essencial": {
-        "name": "TODO copy",
+        "name": "Essential",
         "items": {
-          "i1": "TODO copy",
-          "i2": "TODO copy",
-          "i3": "TODO copy"
+          "i1": "One-page landing page, designed to lead to WhatsApp",
+          "i2": "Responsive, from phone to desktop",
+          "i3": "Published on a .vercel.app address"
         },
-        "cta": "TODO copy"
+        "cta": "Ask about Essential"
       },
       "profissional": {
-        "name": "TODO copy",
+        "name": "Professional",
         "items": {
-          "i1": "TODO copy",
-          "i2": "TODO copy",
-          "i3": "TODO copy"
+          "i1": "Everything in Essential",
+          "i2": "Setup of your own domain",
+          "i3": "Basic SEO setup"
         },
-        "cta": "TODO copy"
+        "cta": "Ask about Professional"
       }
     },
     "notes": {
-      "complexity": "TODO copy",
-      "domain": "TODO copy",
-      "extras": "TODO copy"
+      "complexity": "Prices are a starting point and change with the complexity of the page.",
+      "domain": "You buy the domain (e.g. yourbrand.com) and pay the yearly fee directly to the registrar. I handle the setup.",
+      "extras": "Extra sections, a second language and integrations: quoted on request."
     }
   },
   "about": {
-    "label": "TODO copy",
-    "title": "TODO copy",
-    "body": "TODO copy",
+    "label": "05 / about",
+    "title": "Who builds your page",
+    "body": "I'm Douglas Tertuliano, a full-stack developer with 8 years of experience. I work at a large company and, on the side, build landing pages for freelancers and small businesses. You talk to me directly, from the first message until the page is live.",
     "credentials": {
-      "experience": "TODO copy",
-      "stack": "TODO copy",
-      "companies": "TODO copy"
+      "experience": "8 years as a full-stack dev",
+      "stack": "React · Next.js · TypeScript · Node",
+      "companies": "developer at a large company"
     },
-    "linkedin": "TODO copy",
-    "photoAlt": "TODO copy",
-    "aiLine": "TODO copy"
+    "linkedin": "View LinkedIn profile",
+    "photoAlt": "Photo of Douglas Tertuliano",
+    "aiLine": "AI helps me move faster. The judgment and the code are mine."
   },
   "projects": {
-    "label": "TODO copy",
-    "title": "TODO copy",
-    "buildToLearn": "TODO copy",
+    "label": "06 / other projects",
+    "title": "I also build products",
+    "buildToLearn": "build-to-learn",
     "items": {
       "gasolinha": {
-        "type": "TODO copy",
-        "description": "TODO copy"
+        "type": "SaaS",
+        "description": "App that tracks your car's fuel economy and maintenance, no spreadsheet needed."
       },
       "linkToWhatsapp": {
-        "type": "TODO copy",
-        "description": "TODO copy"
+        "type": "tool",
+        "description": "Creates a direct link to a WhatsApp chat, with the message already filled in."
       },
       "santoRosario": {
-        "type": "TODO copy",
-        "description": "TODO copy"
+        "type": "tool",
+        "description": "A calm, distraction-free guide for praying the Rosary, in Portuguese."
       },
       "qrCodeGenerator": {
-        "type": "TODO copy",
-        "description": "TODO copy"
+        "type": "tool",
+        "description": "Turns any text or link into a QR code."
       },
       "poupensa": {
-        "type": "TODO copy",
-        "description": "TODO copy"
+        "type": "SaaS",
+        "description": "Coming soon."
       }
     }
   },
   "testimonials": {
-    "label": "TODO copy",
-    "title": "TODO copy"
+    "label": "07 / testimonials",
+    "title": "What clients say"
   },
   "faq": {
-    "label": "TODO copy",
-    "title": "TODO copy",
+    "label": "07 / questions",
+    "title": "Before you message me",
     "items": {
       "q1": {
-        "question": "TODO copy",
-        "answer": "TODO copy"
+        "question": "How long does it take?",
+        "answer": "5 to 10 business days, counted from when I receive your material. The exact timeline depends on complexity, and I'll give it to you before we start."
       },
       "q2": {
-        "question": "TODO copy",
-        "answer": "TODO copy"
+        "question": "What do I need to send?",
+        "answer": "Whatever you have: logo, color palette, brand guidelines, photos and copy. The more material, the more the page looks like you. If something is missing, we work it out in our chat."
       },
       "q3": {
-        "question": "TODO copy",
-        "answer": "TODO copy"
+        "question": "Can I ask for changes?",
+        "answer": "Yes. Three rounds of revisions are included before launch. Anything beyond that, or after the page is live, is quoted separately."
       },
       "q4": {
-        "question": "TODO copy",
-        "answer": "TODO copy"
+        "question": "Do I need a domain?",
+        "answer": "No. With Essential, the page lives on a .vercel.app address. If you want your own address, like yourbrand.com, you buy the domain and I set it up in the Professional package. The domain is a yearly fee paid directly to the registrar."
       },
       "q5": {
-        "question": "TODO copy",
-        "answer": "TODO copy"
+        "question": "How does payment work?",
+        "answer": "50% to start and 50% on delivery, by Pix or credit card."
       },
       "q6": {
-        "question": "TODO copy",
-        "answer": "TODO copy"
+        "question": "Do you work with my kind of business?",
+        "answer": "I work with any business that needs a landing page. I mostly work with freelancers and small businesses: nutritionists, therapists, consultants, agencies and people selling a course or ebook."
       }
     }
   },
   "finalCta": {
-    "headline": "TODO copy",
-    "whatsapp": "TODO copy",
-    "linkedin": "TODO copy",
-    "note": "TODO copy"
+    "headline": "Tell me about your brand.",
+    "whatsapp": "Message me on WhatsApp",
+    "linkedin": "or find me on LinkedIn",
+    "note": "You'll be talking to me, not a bot."
   },
   "footer": {
-    "copyright": "TODO copy",
-    "madeWith": "TODO copy"
+    "copyright": "© {year} Douglas Tertuliano",
+    "madeWith": "written in Next.js, hosted on Vercel"
   },
   "whatsapp": {
     "messages": {
-      "default": "TODO copy",
-      "pricing-essencial": "TODO copy",
-      "pricing-profissional": "TODO copy"
+      "default": "Hi Douglas, I saw your website and I'd like to talk about building a landing page for my brand",
+      "pricing-essencial": "Hi Douglas, I saw your website and I'm interested in the Essential package. Can we talk about my landing page?",
+      "pricing-profissional": "Hi Douglas, I saw your website and I'm interested in the Professional package. Can we talk about my landing page?"
     }
   },
   "notFound": {
-    "title": "TODO copy",
-    "backHome": "TODO copy"
-  },
-  "preview": {
-    "title": "Foundation: tokens and primitives",
-    "note": "Temporary review page. Removed before Stage 03.",
-    "colors": "01 / colors",
-    "type": "02 / typography",
-    "buttons": "03 / buttons",
-    "onInverse": "on the dark block",
-    "accentSoft": "04 / highlight block",
-    "accentSoftText": "If you already have a visual identity, the whole page is built from it. Ink text on the light accent background.",
-    "primitives": "05 / accordion and separator",
-    "sampleHeadline": "A page that looks like <em>your</em> brand",
-    "sampleBody": "Body copy in Schibsted Grotesk, to check reading measure and line rhythm in longer paragraphs.",
-    "sampleLabel": "02 / portfolio",
-    "primary": "Primary",
-    "secondary": "Secondary",
-    "ghost": "Ghost",
-    "onInverseButton": "Light button",
-    "inverseLink": "Link on dark",
-    "price": "Price",
-    "accordionQuestion": "Sample question",
-    "accordionAnswer": "Sample answer, just to see the icon rotate and the content open.",
-    "accordionQuestion2": "Another question"
+    "title": "This page doesn't exist.",
+    "backHome": "Back to home"
   }
 }
