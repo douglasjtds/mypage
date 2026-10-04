@@ -607,9 +607,9 @@ Entrega: URL publicada, resultados do Lighthouse em produção, pendências.
 
 | Pendência | Bloqueia | Status |
 |---|---|---|
-| Prazo padrão de entrega | Etapa 03 (FAQ) | aberto |
-| Forma de pagamento | Etapa 03 (FAQ) | aberto |
-| Rodadas de alteração inclusas | Etapa 03 (FAQ) | aberto |
+| Prazo padrão de entrega | Etapa 03 (FAQ) | resolvido: 5 a 10 dias úteis a partir do material |
+| Forma de pagamento | Etapa 03 (FAQ) | resolvido: Pix ou cartão, 50% de entrada + 50% na entrega |
+| Rodadas de alteração inclusas | Etapa 03 (FAQ) | resolvido: 3 rodadas antes de publicar |
 | Foto profissional | Etapa 10 | aberto |
 | Umami ou Vercel Web Analytics | Etapa 13 | aberto |
 | Domínio | Etapas 13 e 15 | aberto |
@@ -622,9 +622,9 @@ Entrega: URL publicada, resultados do Lighthouse em produção, pendências.
 |---|---|---|---|---|
 | 00 Bootstrap | concluída | 2026-10-03 | | Next 16.3.8, pnpm 12.8.1 (brew). `pnpm test` só funciona após a Etapa 01 (Playwright). `pnpm-workspace.yaml` bloqueia build do sharp; rever na Etapa 04 |
 | 01 Skills | concluída | 2026-10-03 | | Instalação via flags não interativas (impeccable `--project --providers=claude`; skills CLI `--copy`). Playwright 1.63.0. PRODUCT.md completo na raiz (exceção à regra de raiz, aprovada). `.claude/**` fora do ESLint. `skills-lock.json` versionado. Hooks do impeccable só locais (`settings.local.json`). Instalação global acidental removida. Pendente: confirmar se o binário do impeccable (14MB) vai para o `.gitignore` |
-| 02 Fundação | aguardando gate | 2026-10-03 | | next-intl 4.14.9, shadcn (radix) com clsx + tailwind-merge no lugar do pacote `cn` e sem `tw-animate-css` (keyframes próprios). Paleta padrão do Tailwind apagada (`--color-*: initial`). Cookie `NEXT_LOCALE` gravado sem redirecionar. `@parcel/watcher` e `@swc/core` com build bloqueado no `pnpm-workspace.yaml`. Pendente: apagar `src/app/[locale]/preview/` e as chaves `preview` após o gate; `height` dos screenshots vem na Etapa 04; URL do Poupensa |
-| 02b Redirecionamento visual | aguardando gate | 2026-10-03 | | Schibsted Grotesk tem tnum (preço fica na display). Peso dos displays via `--text-*--font-weight`. Componente `Emphasis` + `richTags` em `src/components/ui/emphasis.tsx`. Chaves `preview` reestruturadas (`sampleHeadline` com `<em>`). Contrastes conferidos por script. "verde" restante só no histórico da 02, no bloco da 02b e nas duas frases de anti-referência ditadas (DESIGN-GUIDELINES 9, CLAUDE.md). Critique e Taste rodados em contexto único (sem subagentes). Pendente: gate visual lado a lado com os sites do portfólio; depois aprovar gate da 02 e apagar a /preview |
-| 03 Copy PT/EN | a fazer | | | |
+| 02 Fundação | concluída | 2026-10-03 | | next-intl 4.14.9, shadcn (radix) com clsx + tailwind-merge no lugar do pacote `cn` e sem `tw-animate-css` (keyframes próprios). Paleta padrão do Tailwind apagada (`--color-*: initial`). Cookie `NEXT_LOCALE` gravado sem redirecionar. `@parcel/watcher` e `@swc/core` com build bloqueado no `pnpm-workspace.yaml`. Pendente: apagar `src/app/[locale]/preview/` e as chaves `preview` após o gate; `height` dos screenshots vem na Etapa 04; URL do Poupensa |
+| 02b Redirecionamento visual | concluída | 2026-10-03 | | Schibsted Grotesk tem tnum (preço fica na display). Peso dos displays via `--text-*--font-weight`. Componente `Emphasis` + `richTags` em `src/components/ui/emphasis.tsx`. Chaves `preview` reestruturadas (`sampleHeadline` com `<em>`). Contrastes conferidos por script. "verde" restante só no histórico da 02, no bloco da 02b e nas duas frases de anti-referência ditadas (DESIGN-GUIDELINES 9, CLAUDE.md). Critique e Taste rodados em contexto único (sem subagentes). Pendente: gate visual lado a lado com os sites do portfólio; depois aprovar gate da 02 e apagar a /preview |
+| 03 Copy PT/EN | aguardando gate | 2026-10-03 | | Gate 02/02b aprovado; `/preview` e chaves `preview` apagadas. Hero passou a usar uma chave `hero.headline` com `<em>` (saíram `headlineStart/Emphasis/End`). Chave nova `a11y.newTab`. Segmento/tipo do portfólio inferidos dos sites (a confirmar). Stack: React, Next.js, TS, Node; empresa sem nome. Numeração dos rótulos: FAQ é `07` enquanto depoimentos estiverem desligados; renumerar (ou gerar o número no componente) quando ligar. Poupensa com descrição "Em breve" até ser publicado |
 | 04 Captura do portfólio | a fazer | | | |
 | 05 Header + Footer | a fazer | | | |
 | 06 Hero | a fazer | | | |
