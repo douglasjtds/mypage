@@ -18,6 +18,9 @@
   --accent-on-inverse: #e2673a;
 
   --focus-ring: var(--accent);
+
+  /* Altura do header sticky; base do scroll-margin das seções. */
+  --header-height: 4rem;
 }
 
 /* Raio, sombra e curvas: sempre emitidos como variáveis (static) para uso em CSS. */
@@ -133,6 +136,17 @@
     outline: 2px solid var(--focus-ring);
     outline-offset: 2px;
   }
+
+  /* Alvos de foco programático (main, seções): recebem o foco, sem anel em volta do bloco. */
+  [tabindex="-1"]:focus {
+    outline: none;
+  }
+
+  /* Âncoras param abaixo do header, com respiro. */
+  section[id],
+  main[id] {
+    scroll-margin-top: calc(var(--header-height) + 24px);
+  }
 }
 
 @keyframes accordion-down {
@@ -190,6 +204,13 @@
 @keyframes fade-out {
   to {
     opacity: 0;
+  }
+}
+
+/* Rolagem suave nas âncoras só para quem não pediu movimento reduzido. */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
   }
 }
 

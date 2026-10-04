@@ -4,7 +4,8 @@
     "description": "Landing pages para autônomos e pequenos negócios, feitas por um desenvolvedor com 8 anos de experiência. Construídas sobre a sua identidade visual e entregues em 5 a 10 dias úteis."
   },
   "a11y": {
-    "newTab": "(abre em nova aba)"
+    "newTab": "(abre em nova aba)",
+    "skipToContent": "Pular para o conteúdo"
   },
   "nav": {
     "label": "Navegação principal",
@@ -13,15 +14,21 @@
     "pricing": "Pacotes",
     "about": "Sobre",
     "openMenu": "Abrir menu",
-    "closeMenu": "Fechar menu"
+    "closeMenu": "Fechar menu",
+    "projects": "Outros projetos",
+    "faq": "Dúvidas",
+    "menu": "menu",
+    "close": "fechar"
   },
   "localeSwitcher": {
     "label": "Idioma",
     "pt": "PT",
-    "en": "EN"
+    "en": "EN",
+    "ptName": "Português",
+    "enName": "English"
   },
   "header": {
-    "whatsappCta": "Falar no WhatsApp",
+    "whatsappCta": "Conversar no WhatsApp",
     "whatsappCtaShort": "WhatsApp"
   },
   "hero": {
@@ -197,7 +204,10 @@
   },
   "footer": {
     "copyright": "© {year} Douglas Tertuliano",
-    "madeWith": "escrito em Next.js, publicado na Vercel"
+    "madeWith": "escrito em Next.js, publicado na Vercel",
+    "navLabel": "Mapa da página",
+    "whatsapp": "WhatsApp",
+    "linkedin": "LinkedIn"
   },
   "whatsapp": {
     "messages": {

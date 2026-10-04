@@ -4,7 +4,8 @@
     "description": "Landing pages for freelancers and small businesses, built by a developer with 8 years of experience. Based on your visual identity and delivered in 5 to 10 business days."
   },
   "a11y": {
-    "newTab": "(opens in a new tab)"
+    "newTab": "(opens in a new tab)",
+    "skipToContent": "Skip to content"
   },
   "nav": {
     "label": "Main navigation",
@@ -13,15 +14,21 @@
     "pricing": "Pricing",
     "about": "About",
     "openMenu": "Open menu",
-    "closeMenu": "Close menu"
+    "closeMenu": "Close menu",
+    "projects": "Other work",
+    "faq": "FAQ",
+    "menu": "menu",
+    "close": "close"
   },
   "localeSwitcher": {
     "label": "Language",
     "pt": "PT",
-    "en": "EN"
+    "en": "EN",
+    "ptName": "Português",
+    "enName": "English"
   },
   "header": {
-    "whatsappCta": "Chat on WhatsApp",
+    "whatsappCta": "Message me on WhatsApp",
     "whatsappCtaShort": "WhatsApp"
   },
   "hero": {
@@ -197,7 +204,10 @@
   },
   "footer": {
     "copyright": "© {year} Douglas Tertuliano",
-    "madeWith": "written in Next.js, hosted on Vercel"
+    "madeWith": "written in Next.js, hosted on Vercel",
+    "navLabel": "Page map",
+    "whatsapp": "WhatsApp",
+    "linkedin": "LinkedIn"
   },
   "whatsapp": {
     "messages": {

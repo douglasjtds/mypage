@@ -53,3 +53,32 @@ test.describe("rotas por idioma", () => {
     await expect(page.locator("body > footer")).toHaveCount(1);
   });
 });
+
+test.describe("toggle de idioma", () => {
+  test("marca o idioma ativo com aria-current", async ({ page }) => {
+    await page.goto("/en");
+    const toggle = page.locator("[data-site-header]").getByRole("group", { name: "Language" });
+    await expect(toggle.getByRole("link", { name: "EN, English" })).toHaveAttribute("aria-current", "true");
+    await expect(toggle.getByRole("link", { name: "PT, Português" })).not.toHaveAttribute("aria-current");
+  });
+
+  test("PT para EN mantém a âncora atual", async ({ page }) => {
+    await page.goto("/#pacotes");
+    await page.locator("[data-site-header]").getByRole("link", { name: "EN, English" }).click();
+    await expect(page).toHaveURL(/\/en#pacotes$/);
+    await expect(page.locator("html")).toHaveAttribute("lang", "en");
+  });
+
+  test("EN para PT mantém a âncora atual", async ({ page }) => {
+    await page.goto("/en#sobre");
+    await page.locator("[data-site-header]").getByRole("link", { name: "PT, Português" }).click();
+    await expect(page).toHaveURL(/\/#sobre$/);
+    await expect(page.locator("html")).toHaveAttribute("lang", "pt");
+  });
+
+  test("sem âncora, o toggle leva à raiz do outro idioma", async ({ page }) => {
+    await page.goto("/");
+    await page.locator("footer").getByRole("link", { name: "EN, English" }).click();
+    await expect(page).toHaveURL(/\/en$/);
+  });
+});
