@@ -9,7 +9,7 @@
     "lint": "eslint",
     "typecheck": "next typegen && tsc --noEmit",
     "test": "playwright test",
-    "capture": "node -e \"console.error('pnpm capture: ainda não implementado. O script scripts/capture-portfolio.ts chega na Etapa 04.'); process.exit(1)\""
+    "capture": "tsx scripts/capture-portfolio.ts"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
@@ -30,7 +30,9 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.3.8",
+    "sharp": "^0.35.5",
     "tailwindcss": "^4",
+    "tsx": "^4.23.15",
     "typescript": "^5"
   },
   "packageManager": "pnpm@12.8.1"

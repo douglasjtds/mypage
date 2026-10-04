@@ -26,6 +26,8 @@ export type LandingProject = BaseProject & {
   /** Chave em `portfolio.projects` (segmento, tipo, alt). */
   messageKey: LandingKey;
   screenshot: Screenshot;
+  /** URL aberta pelo `pnpm capture` quando não deve ser a de produção (não poluir o analytics do cliente). */
+  captureUrl?: string;
 };
 
 export type OtherProject = BaseProject & {
@@ -46,18 +48,18 @@ export const projects: Project[] = [
     category: "landing",
     messageKey: "brunaMagalhaes",
     published: true,
-    // Altura provisória: `pnpm capture` (Etapa 04) grava os valores reais.
-    screenshot: { src: "/portfolio/bruna-magalhaes.webp", width: 1440, height: 0 },
+    screenshot: { src: "/portfolio/bruna-magalhaes.webp", width: 1440, height: 8578 },
   },
   {
     slug: "alando-digital",
     name: "Alando Digital",
     url: "https://alandodigital.com.br/",
     domain: "alandodigital.com.br",
+    captureUrl: "https://alando-digital.vercel.app/",
     category: "landing",
     messageKey: "alandoDigital",
     published: true,
-    screenshot: { src: "/portfolio/alando-digital.webp", width: 1440, height: 0 },
+    screenshot: { src: "/portfolio/alando-digital.webp", width: 1440, height: 10977 },
   },
   {
     slug: "gasolinha",
