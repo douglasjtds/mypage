@@ -4,7 +4,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
-import { hankenGrotesk, instrumentSerif, jetbrainsMono } from "./fonts";
+import { jetbrainsMono, schibstedGrotesk } from "./fonts";
 import "../globals.css";
 
 export function generateStaticParams() {
@@ -28,10 +28,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
   setRequestLocale(locale);
 
   return (
-    <html
-      lang={locale}
-      className={cn(instrumentSerif.variable, hankenGrotesk.variable, jetbrainsMono.variable)}
-    >
+    <html lang={locale} className={cn(schibstedGrotesk.variable, jetbrainsMono.variable)}>
       <body>{children}</body>
     </html>
   );

@@ -4,6 +4,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import { richTags } from "@/components/ui/emphasis";
 import { Separator } from "@/components/ui/separator";
 import { formatPrice } from "@/lib/format";
 
@@ -18,7 +19,10 @@ const swatches = [
   ["accent-hover", "bg-accent-hover"],
   ["accent-soft", "bg-accent-soft"],
   ["on-accent", "bg-on-accent"],
-  ["on-accent-muted", "bg-on-accent-muted"],
+  ["inverse", "bg-inverse"],
+  ["on-inverse", "bg-on-inverse"],
+  ["on-inverse-muted", "bg-on-inverse-muted"],
+  ["accent-on-inverse", "bg-accent-on-inverse"],
 ] as const;
 
 const scale = [
@@ -38,11 +42,7 @@ export default async function PreviewPage({ params }: PageProps<"/[locale]/previ
   setRequestLocale(locale as Locale);
   const t = await getTranslations("preview");
 
-  const headline = (
-    <>
-      {t("sampleHeadlineStart")} <em>{t("sampleHeadlineEmphasis")}</em> {t("sampleHeadlineEnd")}
-    </>
-  );
+  const headline = t.rich("sampleHeadline", richTags);
 
   return (
     <main className="mx-auto flex max-w-content flex-col gap-24 px-4 py-24 md:px-6 lg:px-8">
@@ -102,15 +102,27 @@ export default async function PreviewPage({ params }: PageProps<"/[locale]/previ
             {t("secondary")}
           </Button>
         </div>
-        <div data-surface="accent" className="flex flex-col gap-6 rounded-md bg-accent p-8 text-on-accent">
-          <span className="font-mono text-label text-on-accent-muted">{t("onAccent")}</span>
+        <div data-surface="inverse" className="flex flex-col gap-6 rounded-md bg-inverse p-8 text-on-inverse">
+          <span className="font-mono text-label text-on-inverse-muted">{t("onInverse")}</span>
+          <p className="font-display text-display-m">{headline}</p>
           <div className="flex flex-wrap items-center gap-4">
-            <Button variant="on-accent">{t("onAccentButton")}</Button>
-            <a href="#preview-buttons" className="text-on-accent underline underline-offset-4">
-              {t("secondary")}
+            <Button>{t("primary")}</Button>
+            <Button variant="on-inverse">{t("onInverseButton")}</Button>
+            <a
+              href="#preview-buttons"
+              className="text-small text-accent-on-inverse underline underline-offset-4 transition-colors duration-150 hover:text-on-inverse"
+            >
+              {t("inverseLink")}
             </a>
           </div>
         </div>
+      </section>
+
+      <section aria-labelledby="preview-accent-soft" className="flex flex-col gap-8">
+        <h2 id="preview-accent-soft" className="font-mono text-label text-ink-muted">
+          {t("accentSoft")}
+        </h2>
+        <p className="max-w-2xl rounded-md bg-accent-soft p-8 text-body-l text-ink">{t("accentSoftText")}</p>
       </section>
 
       <section aria-labelledby="preview-primitives" className="flex flex-col gap-8">

@@ -1,18 +1,10 @@
-import { Hanken_Grotesk, Instrument_Serif, JetBrains_Mono } from "next/font/google";
+import { JetBrains_Mono, Schibsted_Grotesk } from "next/font/google";
 
-export const instrumentSerif = Instrument_Serif({
-  weight: "400",
-  style: ["normal", "italic"],
+export const schibstedGrotesk = Schibsted_Grotesk({
+  weight: ["400", "500", "600", "700", "800"],
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-instrument-serif",
-});
-
-export const hankenGrotesk = Hanken_Grotesk({
-  weight: ["400", "500", "600"],
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-hanken-grotesk",
+  variable: "--font-schibsted-grotesk",
 });
 
 export const jetbrainsMono = JetBrains_Mono({

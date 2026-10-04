@@ -2,17 +2,20 @@
 
 /* Tokens: DESIGN-GUIDELINES 1, 4 e 5. Definidos uma vez aqui. */
 :root {
-  --paper: #f5f2ea;
-  --surface: #ede8dc;
-  --raised: #fbfaf6;
-  --ink: #151815;
-  --ink-muted: #545950;
-  --line: #d9d3c4;
-  --accent: #1e4636;
-  --accent-hover: #163428;
-  --accent-soft: #dce5dc;
-  --on-accent: #f5f2ea;
-  --on-accent-muted: #b9cbbe;
+  --paper: #f2f3f0;
+  --surface: #e6e8e3;
+  --raised: #fafaf8;
+  --ink: #121412;
+  --ink-muted: #4f544e;
+  --line: #d2d5cf;
+  --accent: #b83a12;
+  --accent-hover: #9c3010;
+  --accent-soft: #f4e1d8;
+  --on-accent: #fafaf8;
+  --inverse: #121412;
+  --on-inverse: #f2f3f0;
+  --on-inverse-muted: #a4aaa2;
+  --accent-on-inverse: #e2673a;
 
   --focus-ring: var(--accent);
 }
@@ -25,7 +28,7 @@
   --radius-md: 8px;
 
   --shadow-*: initial;
-  --shadow-window: 0 1px 0 var(--line), 0 24px 48px -24px rgb(21 24 21 / 0.18);
+  --shadow-window: 0 1px 0 var(--line), 0 24px 48px -24px rgb(18 20 18 / 0.2);
 
   --container-content: 80rem;
 
@@ -34,9 +37,19 @@
   --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
 }
 
-/* Sobre fundo verde, o anel de foco passa para --on-accent. */
-[data-surface="accent"] {
-  --focus-ring: var(--on-accent);
+/* Sobre bloco escuro (--inverse), o anel de foco passa para --on-inverse. */
+[data-surface="inverse"] {
+  --focus-ring: var(--on-inverse);
+}
+
+/* Ênfase em headline: sublinhado grosso em --accent numa única palavra (nunca itálico nem cor). */
+@utility emphasis {
+  font-style: normal;
+  text-decoration-line: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 0.09em;
+  text-underline-offset: 0.1em;
+  text-decoration-skip-ink: none;
 }
 
 @theme inline {
@@ -54,21 +67,27 @@
   --color-accent-hover: var(--accent-hover);
   --color-accent-soft: var(--accent-soft);
   --color-on-accent: var(--on-accent);
-  --color-on-accent-muted: var(--on-accent-muted);
+  --color-inverse: var(--inverse);
+  --color-on-inverse: var(--on-inverse);
+  --color-on-inverse-muted: var(--on-inverse-muted);
+  --color-accent-on-inverse: var(--accent-on-inverse);
 
-  --font-display: var(--font-instrument-serif), Georgia, serif;
-  --font-sans: var(--font-hanken-grotesk), system-ui, sans-serif;
+  --font-display: var(--font-schibsted-grotesk), system-ui, sans-serif;
+  --font-sans: var(--font-schibsted-grotesk), system-ui, sans-serif;
   --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
 
   --text-display-xl: clamp(3rem, 7.5vw, 6.5rem);
-  --text-display-xl--line-height: 0.95;
-  --text-display-xl--letter-spacing: -0.02em;
+  --text-display-xl--line-height: 0.92;
+  --text-display-xl--letter-spacing: -0.035em;
+  --text-display-xl--font-weight: 700;
   --text-display-l: clamp(2.25rem, 4.5vw, 3.75rem);
-  --text-display-l--line-height: 1;
-  --text-display-l--letter-spacing: -0.015em;
+  --text-display-l--line-height: 0.98;
+  --text-display-l--letter-spacing: -0.03em;
+  --text-display-l--font-weight: 700;
   --text-display-m: clamp(1.75rem, 3vw, 2.5rem);
-  --text-display-m--line-height: 1.1;
-  --text-display-m--letter-spacing: -0.01em;
+  --text-display-m--line-height: 1.05;
+  --text-display-m--letter-spacing: -0.02em;
+  --text-display-m--font-weight: 600;
   --text-body-l: 1.25rem;
   --text-body-l--line-height: 1.5;
   --text-body: 1.0625rem;
