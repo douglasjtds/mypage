@@ -9,7 +9,7 @@
 1. **Um objetivo:** abrir uma conversa no WhatsApp. Todo bloco empurra para isso.
 2. **Prova antes de preço:** portfólio e processo vêm antes dos pacotes.
 3. **Uma pessoa, não uma fábrica:** nome, rosto e LinkedIn aparecem cedo e com destaque.
-4. **Editorial, não SaaS:** a página se parece mais com uma revista ou um portfólio de estúdio do que com landing de startup. Ver DESIGN-GUIDELINES.md.
+4. **Ficha técnica, não SaaS:** a página se parece mais com uma ficha técnica bem diagramada ou um portfólio de estúdio do que com landing de startup: grotesca forte, mono na estrutura, fios, um acento vermelhão escasso. Ver DESIGN-GUIDELINES.md.
 5. **Ritmo variado:** nenhuma seção repete o layout da anterior. Proibido empilhar "título centralizado + grid de 3 cards" seção após seção.
 
 ---
@@ -39,7 +39,7 @@
 **Objetivo:** identificar quem é e dar acesso ao CTA de qualquer ponto da página.
 
 **Layout:**
-- Esquerda: nome "Douglas Tertuliano" como wordmark tipográfico (serifada de display)
+- Esquerda: nome "Douglas Tertuliano" como wordmark tipográfico (Schibsted Grotesk 700, tracking -0.02em)
 - Direita: links âncora, toggle de idioma, botão WhatsApp
 - Toggle de idioma: pequeno, texto mono "PT / EN" com o ativo marcado. Não usar bandeiras
 - Altura compacta. No topo da página: fundo transparente. Após rolar: fundo papel com borda inferior de 1px, transição suave
@@ -57,8 +57,8 @@
 **Objetivo:** em 5 segundos, comunicar: landing pages, feitas por um dev de verdade, rápido e com a cara da marca do cliente.
 
 **Layout (desktop):** grid assimétrico de 12 colunas
-- Colunas 1 a 8: rótulo mono pequeno (categoria/disponibilidade) → headline grande em serifada de display, alinhada à esquerda → subheadline curta → CTA primário (WhatsApp) + link secundário textual (ver portfólio)
-- Colunas 9 a 12: elemento visual de prova. Opção recomendada: recorte de uma das landing pages do portfólio dentro de uma moldura de navegador minimalista, levemente deslocado para fora do grid. Alternativa: foto do Douglas em P&B ou tratada com o verde
+- Colunas 1 a 8: rótulo mono pequeno (categoria/disponibilidade) → headline grande na grotesca de display, alinhada à esquerda, com no máximo uma palavra em ênfase sublinhada → subheadline curta → CTA primário (WhatsApp) + link secundário textual (ver portfólio)
+- Colunas 9 a 12: elemento visual de prova. Opção recomendada: recorte de uma das landing pages do portfólio dentro de uma moldura de navegador minimalista, levemente deslocado para fora do grid. Alternativa: foto do Douglas em P&B
 - Linha inferior do hero (opcional): 3 fatos curtos em mono separados por fio (ex.: anos de experiência, prazo médio, idiomas). Nada de contadores animados
 
 **Mobile:** coluna única; visual abaixo do CTA, menor.
@@ -98,7 +98,7 @@
 
 **Layout:**
 - Lista vertical numerada (01, 02, 03, 04) em linhas separadas por fios horizontais, número em mono grande à esquerda, título + descrição à direita. Estilo índice de revista, não cards
-- Bloco lateral ou de destaque (fundo verde-claro ou borda verde à esquerda) com a mensagem de brand-first: "se você já tem identidade visual, o site é 100% baseado nela; quanto mais material, mais com a sua cara"
+- Bloco lateral ou de destaque (fundo `--accent-soft` com texto `--ink`, ou borda de 2px em `--accent` à esquerda) com a mensagem de brand-first: "se você já tem identidade visual, o site é 100% baseado nela; quanto mais material, mais com a sua cara"
 - Bloco curto separado sobre o uso de IA: acelerador de processo, critério humano. Tom honesto, sem ícone de "sparkles" ou robô
 
 **Passos (conteúdo, não copy):** conversa no WhatsApp → envio do material da marca → desenvolvimento e ajustes → publicação.
@@ -113,11 +113,11 @@
 
 **Layout:**
 - Dois blocos lado a lado (desktop), empilhados no mobile
-- Profissional destacado por fundo verde escuro com texto claro; Essencial em fundo papel com borda
+- Profissional destacado por bloco `--inverse` com texto `--on-inverse` e botão `--accent`; Essencial em fundo papel com borda
 - Cada bloco: nome do pacote → preço com "a partir de" em tamanho menor acima → lista curta do que inclui (fios, não checkmarks coloridos) → CTA WhatsApp com mensagem específica do pacote
 - Abaixo dos blocos, em texto pequeno: nota de que o valor varia com a complexidade; nota de que o domínio é comprado pelo cliente; adicionais sob consulta
 
-**Hierarquia:** preço é o maior elemento do bloco, em serifada de display.
+**Hierarquia:** preço é o maior elemento do bloco, na display com `tabular-nums`.
 
 **Evitar:** badge "Mais popular" com gradiente, tabela de comparação, preço riscado.
 
@@ -142,7 +142,7 @@
 
 **Layout:**
 - Lista em linhas (estilo tabela editorial): nome · tipo (SaaS / Ferramenta) · uma linha de descrição · seta ↗
-- Linha inteira clicável, hover sutil (fundo verde-claro ou deslocamento da seta)
+- Linha inteira clicável, hover sutil (fundo `--accent-soft` ou deslocamento da seta)
 - Gasolinha com rótulo "build-to-learn"
 - Sem screenshots aqui, para manter a hierarquia abaixo do portfólio
 
@@ -154,7 +154,7 @@
 
 **Regra:** só renderiza se houver depoimentos reais em `src/content/testimonials.ts`. Sem conteúdo, a seção não existe no DOM e não aparece no nav.
 
-**Layout quando ligado:** uma citação grande em serifada de display (o melhor depoimento) + no máximo 2 menores. Nome, negócio e link para o site do cliente. Nada de carrossel.
+**Layout quando ligado:** uma citação grande na display, peso 500 (o melhor depoimento) + no máximo 2 menores. Nome, negócio e link para o site do cliente. Nada de carrossel.
 
 ---
 
@@ -175,8 +175,8 @@
 **Objetivo:** última chance de conversão.
 
 **Layout:**
-- Bloco de largura total em verde escuro, texto claro
-- Headline grande em serifada à esquerda; CTA WhatsApp (primário, botão claro) + LinkedIn (secundário, link) à direita ou abaixo
+- Bloco de largura total em `--inverse`, texto `--on-inverse`
+- Headline grande na display à esquerda; CTA WhatsApp (primário, botão `--accent`) + LinkedIn (secundário, link) à direita ou abaixo
 - Pode repetir uma frase curta sobre resposta rápida no WhatsApp
 
 ---
@@ -210,10 +210,10 @@ Header      papel (transparente no topo)
 Hero        papel
 Portfólio   papel com faixa sutil (surface)
 Como func.  papel
-Pacotes     papel + 1 bloco verde
+Pacotes     papel + 1 bloco inverse
 Sobre       surface
 Outros      papel
 FAQ         papel
-CTA final   verde escuro
+CTA final   inverse
 Footer      papel
 ```

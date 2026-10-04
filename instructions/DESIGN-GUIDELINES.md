@@ -1,6 +1,8 @@
 # Design Guidelines · Douglas Tertuliano
 
-> Direção: **editorial, quente e contida.** Papel, tinta e um único verde escuro. A tipografia é o principal elemento visual. A página deve parecer feita por uma pessoa com critério, não montada a partir de um kit.
+> Direção: **papel técnico.** Branco-acinzentado frio, tinta quase preta e um único acento vermelhão usado com escassez. Sem serifada: uma grotesca com personalidade para títulos e texto, e a mono presente na estrutura (rótulos, numeração, metadados), como uma ficha técnica bem diagramada. A página deve parecer feita por uma pessoa com critério, não montada a partir de um kit.
+
+O site do Douglas é a moldura; os sites dos clientes são o conteúdo. A moldura contrasta com a fórmula visual dos cases do portfólio (ver anti-referências na seção 9) em vez de repeti-la.
 
 Este documento substitui, para este projeto, a referência padrão "Linear / Resend / Vercel" do template. Aquela estética (fundo neutro frio, Inter, gradiente, cards com glow) virou a cara padrão de site gerado por IA, que é exatamente o que este site não pode parecer.
 
@@ -12,25 +14,43 @@ Este documento substitui, para este projeto, a referência padrão "Linear / Res
 
 | Token | Hex | Uso |
 |---|---|---|
-| `--paper` | `#F5F2EA` | Fundo principal |
-| `--surface` | `#EDE8DC` | Faixas alternadas, sobre mim, áreas de destaque sutil |
-| `--raised` | `#FBFAF6` | Interior das janelas do portfólio, popovers |
-| `--ink` | `#151815` | Texto principal, títulos |
-| `--ink-muted` | `#545950` | Texto secundário, descrições |
-| `--line` | `#D9D3C4` | Fios, bordas, divisórias |
-| `--accent` | `#1E4636` | Verde escuro: CTA primário, pacote destacado, CTA final, links |
-| `--accent-hover` | `#163428` | Hover/active do accent |
-| `--accent-soft` | `#DCE5DC` | Fundos de destaque claros (bloco brand-first, hover de linhas) |
-| `--on-accent` | `#F5F2EA` | Texto sobre verde escuro |
-| `--on-accent-muted` | `#B9CBBE` | Texto secundário sobre verde escuro |
+| `--paper` | `#F2F3F0` | Fundo principal |
+| `--surface` | `#E6E8E3` | Faixas alternadas, sobre mim |
+| `--raised` | `#FAFAF8` | Interior das janelas do portfólio, popovers |
+| `--ink` | `#121412` | Texto principal, títulos |
+| `--ink-muted` | `#4F544E` | Texto secundário, descrições |
+| `--line` | `#D2D5CF` | Fios, bordas, divisórias |
+| `--accent` | `#B83A12` | Vermelhão: CTA primário, ênfase de headline, anel de foco |
+| `--accent-hover` | `#9C3010` | Hover/active do accent |
+| `--accent-soft` | `#F4E1D8` | Fundos claros de destaque (bloco brand-first, seleção de texto). Texto sobre ele sempre em `--ink` |
+| `--on-accent` | `#FAFAF8` | Texto sobre `--accent` |
+| `--inverse` | `#121412` | Blocos escuros (pacote Profissional, CTA final) |
+| `--on-inverse` | `#F2F3F0` | Texto sobre `--inverse` |
+| `--on-inverse-muted` | `#A4AAA2` | Texto secundário sobre `--inverse` |
+| `--accent-on-inverse` | `#E2673A` | Só links e detalhes pequenos sobre `--inverse` (o botão continua `--accent`) |
+
+### Contrastes conferidos
+
+| Combinação | Razão |
+|---|---|
+| `--ink` / `--paper` | 16.6 |
+| `--ink-muted` / `--paper` | 6.96 |
+| `--ink-muted` / `--surface` | 6.28 |
+| `--accent` / `--paper` | 5.16 |
+| `--on-accent` / `--accent` | 5.5 |
+| `--on-inverse-muted` / `--inverse` | 7.8 |
+| `--accent-on-inverse` / `--inverse` | 5.5 |
+| `--accent` / `--accent-soft` | 4.55 (por isso texto sobre `--accent-soft` é `--ink`) |
+| botão `--accent` sobre `--inverse` | 3.22 (contorno de componente, AA 1.4.11) |
 
 ### Regras
 - **Um acento só.** Nada de segunda cor de destaque, nada de gradiente.
-- Verde escuro é escasso: CTA, pacote Profissional, CTA final e detalhes. Se a página parecer "verde", tem verde demais.
+- Vermelhão é escasso: CTA primário, no máximo uma ênfase por headline, anel de foco, hover de links. Se a página parecer laranja, tem acento demais.
+- Pacote Profissional e CTA final são blocos `--inverse` com texto `--on-inverse`; o botão dentro deles é `--accent`.
 - Pretos e brancos puros (`#000`, `#FFF`) são proibidos. Usar `--ink` e `--paper`.
 - Texto sobre `--paper` e `--surface` só em `--ink` ou `--ink-muted` (ambos AA).
-- Estados de foco: anel de 2px em `--accent` com offset de 2px. Sobre fundo verde, anel em `--on-accent`.
-- Ícone do WhatsApp segue a cor do texto do botão. Não usar o verde oficial do WhatsApp.
+- Estados de foco: anel de 2px em `--accent` com offset de 2px. Dentro de `[data-surface="inverse"]`, anel em `--on-inverse`.
+- Ícone do WhatsApp segue a cor do texto do botão. Não usar a cor oficial do WhatsApp.
 
 ---
 
@@ -38,26 +58,41 @@ Este documento substitui, para este projeto, a referência padrão "Linear / Res
 
 | Papel | Fonte | Pesos | Uso |
 |---|---|---|---|
-| Display | **Instrument Serif** (Google Fonts) | 400, 400 itálico | Headlines, preços, wordmark, citações |
-| Texto | **Hanken Grotesk** (Google Fonts) | 400, 500, 600 | Corpo, botões, navegação |
+| Display e texto | **Schibsted Grotesk** (Google Fonts) | 400, 500, 600, 700, 800 | Headlines, preços, wordmark, citações, corpo, botões, navegação |
 | Mono | **JetBrains Mono** (Google Fonts) | 400, 500 | Rótulos de seção, numeração, metadados, toggle de idioma |
 
-Carregar com `next/font/google`, subset `latin` (inclui acentos do PT), `display: swap`, como CSS variables (`--font-display`, `--font-sans`, `--font-mono`).
+Carregar com `next/font/google`, subset `latin` (inclui acentos do PT), `display: swap`, como CSS variables. `--font-display` e `--font-sans` apontam para a Schibsted Grotesk; `--font-mono` para a JetBrains Mono. Nenhuma serifada no projeto.
 
 ### Escala
 
-| Token | Tamanho | Line-height | Tracking | Fonte |
-|---|---|---|---|---|
-| `display-xl` | `clamp(3rem, 7.5vw, 6.5rem)` | 0.95 | -0.02em | Display |
-| `display-l` | `clamp(2.25rem, 4.5vw, 3.75rem)` | 1.0 | -0.015em | Display |
-| `display-m` | `clamp(1.75rem, 3vw, 2.5rem)` | 1.1 | -0.01em | Display |
-| `body-l` | `1.25rem` | 1.5 | 0 | Texto |
-| `body` | `1.0625rem` | 1.6 | 0 | Texto |
-| `small` | `0.875rem` | 1.5 | 0 | Texto |
-| `label` | `0.75rem` | 1.4 | 0.02em | Mono |
+| Token | Tamanho | Peso | Line-height | Tracking | Fonte |
+|---|---|---|---|---|---|
+| `display-xl` | `clamp(3rem, 7.5vw, 6.5rem)` | 700 | 0.92 | -0.035em | Display |
+| `display-l` | `clamp(2.25rem, 4.5vw, 3.75rem)` | 700 | 0.98 | -0.03em | Display |
+| `display-m` | `clamp(1.75rem, 3vw, 2.5rem)` | 600 | 1.05 | -0.02em | Display |
+| `body-l` | `1.25rem` | 400 | 1.5 | 0 | Texto |
+| `body` | `1.0625rem` | 400 | 1.6 | 0 | Texto |
+| `small` | `0.875rem` | 400 | 1.5 | 0 | Texto |
+| `label` | `0.75rem` | 400 | 1.4 | 0.02em | Mono |
+
+O peso dos displays vem embutido no utilitário (`text-display-xl` já é 700).
+
+### Ênfase em headline
+Não é itálico nem cor. É um sublinhado grosso em `--accent` numa única palavra, pelo utilitário `.emphasis`:
+
+```css
+text-decoration-line: underline;
+text-decoration-color: var(--accent);
+text-decoration-thickness: 0.09em;
+text-underline-offset: 0.1em;
+text-decoration-skip-ink: none;
+```
+
+Nas mensagens, a palavra vai marcada com `<em>` e é renderizada com `t.rich(chave, richTags)` (`src/components/ui/emphasis.tsx`). No máximo uma ênfase por headline.
 
 ### Regras
-- Itálico da serifada é a ferramenta de ênfase dentro de headlines (uma palavra ou expressão, não a frase toda). Não usar cor para ênfase em headline.
+- Wordmark "Douglas Tertuliano": Schibsted Grotesk 700, tracking -0.02em.
+- Preços na display com `tabular-nums` (a Schibsted Grotesk tem algarismos tabulares).
 - Rótulos de seção em mono, **minúsculos**, com numeração: `02 / portfólio`. Não usar rótulos em caixa alta espaçada (padrão saturado).
 - Largura de leitura: 60 a 70 caracteres (`max-width: 65ch`) para parágrafos.
 - Headlines alinhadas à esquerda. Centralizado só no CTA final, se fizer sentido.
@@ -95,7 +130,7 @@ Nada de `rounded-full` em botões nem cantos de 16px+. Foto do "sobre mim" com `
 Uma única sombra no sistema, usada apenas nas janelas do portfólio:
 
 ```css
---shadow-window: 0 1px 0 var(--line), 0 24px 48px -24px rgb(21 24 21 / 0.18);
+--shadow-window: 0 1px 0 var(--line), 0 24px 48px -24px rgb(18 20 18 / 0.2);
 ```
 
 Separação de elementos é feita por fios (`1px solid var(--line)`) e mudança de fundo, não por sombra.
@@ -164,7 +199,7 @@ shadcn/ui é base de **comportamento e acessibilidade**, não de visual. Todo co
 
 | Componente | Uso | Ajustes obrigatórios |
 |---|---|---|
-| `Button` | CTAs | Radius 4px, variantes `primary` (accent), `secondary` (borda line), `ghost`, `on-accent`; sem sombra |
+| `Button` | CTAs | Radius 4px, variantes `primary` (accent), `secondary` (borda line), `ghost`, `on-inverse` (fundo `--on-inverse`, texto `--ink`, hover `--raised`, para blocos `--inverse`); sem sombra |
 | `Accordion` | FAQ | Sem caixa/fundo; fios entre itens; ícone + que gira 45° |
 | `Sheet` | Menu mobile | Fundo `--paper`, entrada pelo topo ou direita com ease-out 250ms |
 | `Separator` | Fios | Cor `--line` |
@@ -181,22 +216,21 @@ Observar o **tom**, não copiar layout.
 
 | Referência | O que observar |
 |---|---|
-| press.stripe.com | Serifada editorial, tons de papel, contenção |
 | are.na | Listas e fios como estrutura, interface que não grita |
-| klim.co.nz | Tipografia como elemento visual principal |
 | emilkowal.ski | Detalhes de motion e microinteração |
 | rauno.me | Craft de interação, sutileza |
 
-**Anti-referências** (o que não fazer): landing de SaaS com gradiente roxo/azul, grid de 3 cards com ícone, hero centralizado com badge "✨ Novo", glassmorphism, fundo com grid/pontos decorativos, siteporai.com.br (contexto de negócio, não visual).
+**Anti-referências** (o que não fazer): landing de SaaS com gradiente roxo/azul, grid de 3 cards com ícone, hero centralizado com badge "✨ Novo", glassmorphism, fundo com grid/pontos decorativos, siteporai.com.br (contexto de negócio, não visual), e os sites dos clientes do portfólio: creme quente, verde escuro, título serifado.
 
 ---
 
 ## 10. Checklist visual rápido
 
-- [ ] Só um acento (verde escuro) na página inteira?
+- [ ] Só um acento (vermelhão) na página inteira, usado com escassez?
 - [ ] Alguma seção repete o layout da anterior?
 - [ ] Algum ícone está ali só para decorar?
-- [ ] Headlines à esquerda, em serifada, com ênfase em itálico (não em cor)?
+- [ ] Headlines à esquerda, na grotesca de display, com ênfase sublinhada em `--accent` numa única palavra (não itálico, não cor)?
+- [ ] Nada de serifada em lugar nenhum?
 - [ ] Rótulos em mono minúsculo com numeração?
 - [ ] Contraste AA em todo texto?
 - [ ] Hover, focus e active definidos em todo elemento interativo?

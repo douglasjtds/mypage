@@ -50,6 +50,7 @@ Conversão é sempre um link `wa.me` (número 5531991848090) com mensagem pré-p
 - Voz: frases curtas e concretas, primeira pessoa quando fala do Douglas. Honesta sobre o uso de IA (IA acelera; critério e código são do Douglas).
 - Proibido na copy: travessão (U+2014) em qualquer texto; clichês ("transforme seu negócio", "eleve sua marca", "soluções inovadoras", "leve seu negócio ao próximo nível", "unlock", "elevate", "seamless", "cutting-edge", "game-changer"); tríades decorativas; perguntas retóricas em série; números ou depoimentos inventados.
 - O site nunca pode parecer feito por um gerador de sites com IA. Direção visual e listas de proibições ficam em `instructions/DESIGN-GUIDELINES.md` e `CLAUDE.md`.
+- Direção visual: "papel técnico". Branco-acinzentado frio, tinta quase preta, um único acento vermelhão usado com escassez, Schibsted Grotesk para títulos e texto e JetBrains Mono na estrutura. O site é a moldura e os sites dos clientes são o conteúdo, então a moldura contrasta com a fórmula visual dos cases do portfólio.
 
 ## Evidence on Hand
 

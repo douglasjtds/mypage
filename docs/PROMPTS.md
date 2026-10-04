@@ -139,6 +139,132 @@ Sugestão de commit: provavelmente dividir em feat(design-system), feat(i18n), f
 
 ---
 
+## Etapa 02b · Redirecionamento visual 🔒
+
+```
+Objetivo: trocar a identidade "papel creme + verde escuro + título serifado" pela direção "papel técnico", antes de construir
+qualquer seção. Motivo: os dois cases do portfólio usam a mesma fórmula (Bruna Magalhães: fundo #FAF7F2, oliva #354024,
+Cormorant Garamond; Alando Digital: fundo #F7F4EC, verde #102F15, Playfair Display). Lado a lado no portfólio, os três
+sites pareceriam saídos do mesmo template, o oposto de "o site sai com a cara da sua marca". O site do Douglas é a moldura;
+os sites dos clientes são o conteúdo. A moldura precisa contrastar com eles.
+
+Autorização: o Douglas autoriza explicitamente, nesta etapa, editar instructions/DESIGN-GUIDELINES.md e
+instructions/LANDING-PAGE-SPEC.md (exceção à regra do CLAUDE.md), além de CLAUDE.md, PRODUCT.md e docs/PROMPTS.md nos
+trechos listados abaixo. Nada além disso em instructions/.
+
+Ler antes: CLAUDE.md, PRODUCT.md, instructions/DESIGN-GUIDELINES.md inteiro, instructions/LANDING-PAGE-SPEC.md inteiro,
+docs/PROMPTS.md (Etapa 02, etapas 03 a 12 e Log de progresso).
+
+Pré-requisitos: Etapa 02 (aguardando gate). Esta etapa substitui a parte visual da 02; i18n, conteúdo tipado, WhatsApp e
+testes da 02 não mudam.
+
+Nova direção (já decidida; aplicar exatamente, não reinterpretar)
+
+Conceito: "papel técnico". Branco-acinzentado frio, tinta quase preta, um único acento vermelhão usado com escassez.
+Sem serifada. Uma grotesca com personalidade para títulos e texto, e a mono mais presente na estrutura
+(rótulos, numeração, metadados), como uma ficha técnica bem diagramada. Light mode.
+
+Tokens de cor (mesmos nomes onde já existiam, para não quebrar componentes):
+- --paper            #F2F3F0   fundo principal
+- --surface          #E6E8E3   faixas alternadas, sobre mim
+- --raised           #FAFAF8   interior das janelas do portfólio, popovers
+- --ink              #121412   texto principal
+- --ink-muted        #4F544E   texto secundário
+- --line             #D2D5CF   fios e bordas
+- --accent           #B83A12   vermelhão: CTA primário, ênfase de headline, anel de foco
+- --accent-hover     #9C3010
+- --accent-soft      #F4E1D8   fundos claros de destaque (bloco brand-first, seleção de texto). Texto sobre ele sempre em --ink
+- --on-accent        #FAFAF8   texto sobre --accent
+- --inverse          #121412   blocos escuros (pacote Profissional, CTA final)
+- --on-inverse       #F2F3F0   texto sobre --inverse
+- --on-inverse-muted #A4AAA2   texto secundário sobre --inverse
+- --accent-on-inverse #E2673A  só para links/detalhes pequenos sobre --inverse (botão continua --accent)
+- Remover --on-accent-muted
+Contrastes já calculados (conferir com script na verificação): ink/paper 16.6; ink-muted/paper 6.96; ink-muted/surface 6.28;
+accent/paper 5.16; on-accent/accent 5.5; on-inverse-muted/inverse 7.8; accent-on-inverse/inverse 5.5;
+accent/accent-soft 4.55 (por isso texto sobre accent-soft é --ink); botão --accent sobre --inverse 3.22 (contorno de componente, ok AA 1.4.11).
+
+Regras de cor:
+- Vermelhão é escasso: CTA primário, no máximo uma ênfase por headline, anel de foco, hover de links. Se a página parecer
+  laranja, tem acento demais.
+- Pacote Profissional e CTA final passam de verde para bloco --inverse com texto --on-inverse; o botão dentro deles é --accent.
+- [data-surface="inverse"] troca o anel de foco para --on-inverse. Remover [data-surface="accent"].
+- Nenhuma ocorrência de verde no projeto.
+
+Tipografia:
+- Família única para títulos e texto: Schibsted Grotesk (next/font/google, pesos 400, 500, 600, 700, 800, subset latin,
+  display swap, variável --font-schibsted-grotesk). --font-display e --font-sans apontam para ela.
+- Mono: JetBrains Mono (400, 500), mantida.
+- Remover Instrument Serif e Hanken Grotesk do projeto.
+- Escala: display-xl clamp(3rem, 7.5vw, 6.5rem), peso 700, line-height 0.92, tracking -0.035em;
+  display-l clamp(2.25rem, 4.5vw, 3.75rem), 700, 0.98, -0.03em; display-m clamp(1.75rem, 3vw, 2.5rem), 600, 1.05, -0.02em;
+  body-l, body, small e label sem mudança de tamanho. Peso dos displays embutido no utilitário.
+- Ênfase em headline: não é itálico nem cor. É sublinhado grosso em --accent numa única palavra:
+  text-decoration-line underline; text-decoration-color var(--accent); text-decoration-thickness 0.09em;
+  text-underline-offset 0.1em; text-decoration-skip-ink none. Criar como classe utilitária (ex.: .emphasis) e um componente
+  para usar com t.rich do next-intl, mapeando a tag <em> das mensagens.
+- Wordmark "Douglas Tertuliano": Schibsted Grotesk 700, tracking -0.02em.
+- Preços: display + tabular-nums. Se a Schibsted não tiver tnum, preço em JetBrains Mono.
+- Rótulos de seção continuam em mono minúsculo numerado (02 / portfólio).
+
+Sombra: --shadow-window passa a usar rgb(18 20 18 / 0.2) no lugar de rgb(21 24 21 / 0.18).
+
+Escopo · entra
+
+1. Código
+- src/app/globals.css: tokens novos, mapeamento no tema do Tailwind, escala tipográfica nova, utilitário .emphasis,
+  data-surface="inverse", remoção de on-accent-muted e data-surface="accent"
+- src/app/[locale]/fonts.ts e layout.tsx: Schibsted Grotesk + JetBrains Mono
+- src/components/ui/button.tsx: variantes primary (accent), secondary, ghost e on-inverse (substitui on-accent:
+  fundo --on-inverse, texto --ink, hover --raised, para uso sobre blocos --inverse). Estados hover, focus e active revisados
+  com emil-design-eng
+- src/components/ui/sheet.tsx: título com a nova display
+- src/app/[locale]/preview/page.tsx e chaves "preview" nos JSONs: mostrar todos os tokens novos, a escala com um exemplo
+  de headline usando a ênfase sublinhada, os botões sobre --paper e sobre um bloco --inverse, e o bloco --accent-soft com texto --ink
+
+2. Documentos (manter o resto intacto; não usar travessão)
+- instructions/DESIGN-GUIDELINES.md: reescrever a abertura (direção), seções 1 Cores e 2 Tipografia com os valores acima,
+  ajustar a sombra na seção 4, variantes do Button na seção 8, seção 9 Referências (manter are.na, rauno.me, emilkowal.ski;
+  remover press.stripe.com e klim.co.nz; adicionar como anti-referência "os sites dos clientes do portfólio: creme quente,
+  verde escuro, título serifado") e checklist da seção 10 (acento vermelhão, ênfase sublinhada, nada de serifada)
+- instructions/LANDING-PAGE-SPEC.md: princípio 4 passa a "Ficha técnica, não SaaS"; header (wordmark em grotesca);
+  hero (headline na grotesca de display, alternativa de foto em P&B, sem "tratada com o verde"); como funciona
+  (brand-first com fundo --accent-soft ou borda 2px --accent); pacotes (Profissional em --inverse); depoimentos (citação na
+  display, peso 500); CTA final (--inverse com botão --accent); Ritmo visual (trocar "verde" por "inverse")
+- CLAUDE.md: na lista "Visual: proibido", adicionar "Repetir a assinatura visual dos clientes do portfólio
+  (fundo creme quente + verde escuro + título serifado)"
+- PRODUCT.md: atualizar qualquer descrição da estética antiga para a direção nova
+- docs/PROMPTS.md: inserir este bloco como "Etapa 02b · Redirecionamento visual 🔒" logo após a Etapa 02; ajustar as etapas
+  futuras: 03 (headline "com uma palavra marcada com <em> para a ênfase sublinhada", não itálico), 05 (wordmark em grotesca),
+  06 (ênfase sublinhada em --accent, não itálico), 08 (borda --accent, não verde), 09 (Profissional em --inverse; contraste AA
+  no bloco escuro; foco em --on-inverse), 12 (CTA final em --inverse, headline na display, botão --accent); adicionar a linha
+  "02b Redirecionamento visual" no Log de progresso. Não reescrever o histórico da Etapa 02 nem o log dela.
+
+3. Revisão com as skills
+- /impeccable critique na página /preview
+- design-taste-frontend (pre-flight) para confirmar que a direção nova não caiu em visual genérico
+- Reportar os achados; corrigir só o que estiver dentro deste escopo e listar o resto como sugestão
+
+Escopo · não entra: copy real, seções, mudanças de layout além dos trechos de cor e tipografia listados, apagar a /preview.
+
+Critérios de aceite
+- pnpm lint, pnpm typecheck e pnpm test passando
+- Busca em src/, messages/, instructions/, CLAUDE.md, PRODUCT.md e docs/ (exceto o histórico da Etapa 02 e o texto de
+  motivação desta etapa) sem resultado para: Instrument, Hanken, #1e4636, #163428, #dce5dc, on-accent-muted,
+  data-surface="accent", "verde"
+- Nenhuma cor arbitrária em componente, nenhum #000/#FFF, nenhum gradiente, nenhum travessão (U+2014) fora de instructions/ e CLAUDE.md
+- Script de contraste rodado com as combinações listadas acima, todas conferidas
+- Screenshots da /preview em 375 e 1440 (PT) gerados com Playwright e mostrados ao Douglas
+
+Gate: Douglas abre a /preview ao lado de bruna-magalhaes.vercel.app e alandodigital.com.br e confirma que o site dele não
+parece da mesma família. Só depois disso: aprovar juntos o gate da Etapa 02, apagar a /preview e seguir para a Etapa 03.
+
+Entrega: conforme o preâmbulo do PROMPTS.md.
+Sugestão de commit: style(design-system): switch to technical paper direction ... e docs(design): update guidelines and spec ...
+```
+
+---
+
 ## Etapa 03 · Copy PT/EN 🔒
 
 ```
@@ -154,7 +280,7 @@ Se alguma faltar, perguntar antes de escrever o FAQ.
 
 Escopo · entra:
 - Usar a skill marketing-writer
-- Preencher todas as chaves de messages/pt.json e messages/en.json: header, hero (rótulo, headline com uma palavra em itálico,
+- Preencher todas as chaves de messages/pt.json e messages/en.json: header, hero (rótulo, headline com uma palavra marcada com <em> para a ênfase sublinhada,
   subheadline, CTAs, fatos curtos), portfólio, como funciona (4 passos, bloco brand-first, bloco IA), pacotes (inclui notas de
   complexidade, domínio e adicionais), sobre mim, outros projetos, depoimentos (só rótulos), FAQ (5 a 7), CTA final, footer,
   alt texts, aria-labels, mensagens do WhatsApp por contexto, metadata (title/description por idioma)
@@ -218,7 +344,7 @@ DESIGN-GUIDELINES.md (8: toggle de idioma, Sheet; 7 Iconografia).
 Pré-requisitos: Etapas 02 e 03.
 
 Escopo · entra:
-- Header: wordmark em serifada, até 4 âncoras (Portfólio, Como funciona, Pacotes, Sobre), toggle "PT / EN" em mono com dois links reais,
+- Header: wordmark em grotesca (Schibsted Grotesk 700, tracking -0.02em), até 4 âncoras (Portfólio, Como funciona, Pacotes, Sobre), toggle "PT / EN" em mono com dois links reais,
   botão WhatsApp (ícone SVG próprio monocromático + rótulo). Transparente no topo; após rolar, fundo --paper com borda 1px, transição suave.
   Client component mínimo só para o estado de rolagem
 - Mobile: wordmark + toggle + WhatsApp compacto; âncoras num Sheet
@@ -248,7 +374,7 @@ Ler antes: LANDING-PAGE-SPEC.md (Princípios, 01 Hero), DESIGN-GUIDELINES.md (2 
 Pré-requisitos: Etapas 03, 04, 05.
 
 Escopo · entra:
-- Grid 12 colunas: 1 a 8 com rótulo mono, headline display-xl (ênfase em itálico, não em cor), subheadline, CTA WhatsApp (position: hero)
+- Grid 12 colunas: 1 a 8 com rótulo mono, headline display-xl (ênfase sublinhada em --accent numa palavra via t.rich + richTags, não itálico), subheadline, CTA WhatsApp (position: hero)
   + link textual para #portfolio; 9 a 12 com recorte de um screenshot do portfólio em moldura de navegador mínima, levemente deslocado do grid
 - Linha opcional de 3 fatos curtos em mono separados por fio, só com fatos reais
 - Mobile: coluna única, visual abaixo do CTA e menor
@@ -302,7 +428,7 @@ Pré-requisitos: Etapa 07.
 
 Escopo · entra:
 - Lista vertical numerada 01 a 04 com fios horizontais, número em mono grande à esquerda, título + descrição à direita (índice de revista, não cards)
-- Bloco brand-first em destaque (fundo --accent-soft ou borda verde à esquerda)
+- Bloco brand-first em destaque (fundo --accent-soft com texto --ink, ou borda 2px --accent à esquerda)
 - Bloco curto e separado sobre IA, sem ícone
 - Motion opcional: fios "desenhando" uma vez ao entrar na viewport (scaleX), só se ajudar a leitura; senão, nenhum
 
@@ -323,7 +449,7 @@ Ler antes: LANDING-PAGE-SPEC.md (04 Pacotes, Hierarquia de CTAs), PRD.md (RF04),
 Pré-requisitos: Etapa 08.
 
 Escopo · entra:
-- Dois blocos lado a lado (desktop), empilhados (mobile). Profissional em --accent com texto --on-accent; Essencial em papel com borda
+- Dois blocos lado a lado (desktop), empilhados (mobile). Profissional em --inverse com texto --on-inverse e botão --accent; Essencial em papel com borda
 - Ordem no bloco: nome → "a partir de" pequeno → preço display (maior elemento, tabular-nums) → lista com fios → CTA WhatsApp com mensagem do pacote
   (positions pricing-essencial / pricing-profissional)
 - Notas abaixo em small: varia com a complexidade; domínio comprado pelo cliente; adicionais sob consulta
@@ -332,7 +458,7 @@ Escopo · entra:
 
 Escopo · não entra: badge "mais popular", tabela de comparação, preço riscado.
 
-Critérios de aceite: fluxo padrão de seção; contraste AA no bloco verde; foco em --on-accent sobre verde.
+Critérios de aceite: fluxo padrão de seção; contraste AA no bloco escuro; foco em --on-inverse dentro de [data-surface="inverse"].
 Gate: Douglas aprova.
 Sugestão de commit: feat(pricing): ... e test(cta): ...
 ```
@@ -393,7 +519,7 @@ Pré-requisitos: Etapa 11.
 
 Escopo · entra:
 - FAQ: duas colunas no desktop, título sticky à esquerda dentro da seção, Accordion à direita com fios, + que gira 45° para ×, sem caixas
-- CTA final: bloco largura total em --accent, headline serifada à esquerda, botão WhatsApp claro (variante on-accent, position: final) + LinkedIn como link
+- CTA final: bloco largura total em --inverse (data-surface="inverse"), headline na display à esquerda, botão WhatsApp --accent (variante primary, position: final) + LinkedIn como link em --accent-on-inverse
 - Ampliar cta.spec com os CTAs novos
 
 Critérios de aceite: fluxo padrão de seção; accordion acessível por teclado; review-animations no accordion.
@@ -497,6 +623,7 @@ Entrega: URL publicada, resultados do Lighthouse em produção, pendências.
 | 00 Bootstrap | concluída | 2026-10-03 | | Next 16.3.8, pnpm 12.8.1 (brew). `pnpm test` só funciona após a Etapa 01 (Playwright). `pnpm-workspace.yaml` bloqueia build do sharp; rever na Etapa 04 |
 | 01 Skills | concluída | 2026-10-03 | | Instalação via flags não interativas (impeccable `--project --providers=claude`; skills CLI `--copy`). Playwright 1.63.0. PRODUCT.md completo na raiz (exceção à regra de raiz, aprovada). `.claude/**` fora do ESLint. `skills-lock.json` versionado. Hooks do impeccable só locais (`settings.local.json`). Instalação global acidental removida. Pendente: confirmar se o binário do impeccable (14MB) vai para o `.gitignore` |
 | 02 Fundação | aguardando gate | 2026-10-03 | | next-intl 4.14.9, shadcn (radix) com clsx + tailwind-merge no lugar do pacote `cn` e sem `tw-animate-css` (keyframes próprios). Paleta padrão do Tailwind apagada (`--color-*: initial`). Cookie `NEXT_LOCALE` gravado sem redirecionar. `@parcel/watcher` e `@swc/core` com build bloqueado no `pnpm-workspace.yaml`. Pendente: apagar `src/app/[locale]/preview/` e as chaves `preview` após o gate; `height` dos screenshots vem na Etapa 04; URL do Poupensa |
+| 02b Redirecionamento visual | aguardando gate | 2026-10-03 | | Schibsted Grotesk tem tnum (preço fica na display). Peso dos displays via `--text-*--font-weight`. Componente `Emphasis` + `richTags` em `src/components/ui/emphasis.tsx`. Chaves `preview` reestruturadas (`sampleHeadline` com `<em>`). Contrastes conferidos por script. "verde" restante só no histórico da 02, no bloco da 02b e nas duas frases de anti-referência ditadas (DESIGN-GUIDELINES 9, CLAUDE.md). Critique e Taste rodados em contexto único (sem subagentes). Pendente: gate visual lado a lado com os sites do portfólio; depois aprovar gate da 02 e apagar a /preview |
 | 03 Copy PT/EN | a fazer | | | |
 | 04 Captura do portfólio | a fazer | | | |
 | 05 Header + Footer | a fazer | | | |

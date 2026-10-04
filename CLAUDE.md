@@ -92,6 +92,7 @@ Ordem de prioridade: `instructions/DESIGN-GUIDELINES.md` → emilkowalski/skills
 - Contadores animados ("+100 clientes"), carrosséis, marquee de logos
 - Mais de uma cor de acento; preto `#000` e branco `#FFF` puros
 - Animações em loop, parallax, scroll-jacking, 3D
+- Repetir a assinatura visual dos clientes do portfólio (fundo creme quente + verde escuro + título serifado)
 
 ### Copy: proibido
 - Travessão (—) em qualquer texto, PT ou EN. Usar vírgula, dois pontos, parênteses ou ponto
