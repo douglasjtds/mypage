@@ -28,6 +28,8 @@ export type LandingProject = BaseProject & {
   screenshot: Screenshot;
   /** URL aberta pelo `pnpm capture` quando não deve ser a de produção (não poluir o analytics do cliente). */
   captureUrl?: string;
+  /** Recorte do topo do screenshot, usado no hero. Gerado pelo `pnpm capture` (ou `--crops-only`). */
+  heroCrop?: Screenshot;
 };
 
 export type OtherProject = BaseProject & {
@@ -49,6 +51,7 @@ export const projects: Project[] = [
     messageKey: "brunaMagalhaes",
     published: true,
     screenshot: { src: "/portfolio/bruna-magalhaes.webp", width: 1440, height: 8578 },
+    heroCrop: { src: "/portfolio/bruna-magalhaes-hero.webp", width: 1440, height: 1800 },
   },
   {
     slug: "alando-digital",

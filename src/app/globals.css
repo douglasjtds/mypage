@@ -55,6 +55,15 @@
   text-decoration-skip-ink: none;
 }
 
+/*
+ * Entrada única do hero (só no carregamento): fade + 10px de subida, ease-out, escalonada
+ * em passos de 60ms via --enter-step. Movimento reduzido: o bloco no fim do arquivo zera duração e atraso.
+ */
+@utility enter-up {
+  animation: enter-up 360ms var(--ease-out) both;
+  animation-delay: calc(var(--enter-step, 0) * 60ms);
+}
+
 @theme inline {
   /* Apaga a paleta padrão do Tailwind: só as cores do projeto existem. */
   --color-*: initial;
@@ -195,6 +204,13 @@
   }
 }
 
+@keyframes enter-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -221,6 +237,11 @@
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto !important;
+  }
+
+  /* Entradas de carregamento somem por completo: o conteúdo já nasce no lugar. */
+  .enter-up {
+    animation: none !important;
   }
 
   *,
