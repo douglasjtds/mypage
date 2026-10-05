@@ -64,6 +64,27 @@
   animation-delay: calc(var(--enter-step, 0) * 60ms);
 }
 
+/*
+ * Preview do portfólio (DESIGN-GUIDELINES 5): no hover da janela, o screenshot rola até o rodapé do site.
+ * --scroll-duration vem inline do componente (altura conhecida da imagem). Ida em ease-in-out com 150ms
+ * de atraso; volta em 700ms ease-out. Só com mouse e sem movimento reduzido; toque e foco não rolam.
+ */
+@utility preview {
+  container-type: size;
+}
+
+@utility preview-img {
+  transform: translateY(0);
+  transition: transform 700ms var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .preview-trigger:hover .preview-img {
+    transform: translateY(calc(-100% + 100cqh));
+    transition: transform var(--scroll-duration) var(--ease-in-out) 150ms;
+  }
+}
+
 @theme inline {
   /* Apaga a paleta padrão do Tailwind: só as cores do projeto existem. */
   --color-*: initial;
