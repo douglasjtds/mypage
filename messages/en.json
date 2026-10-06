@@ -56,9 +56,14 @@
         "alt": "Full-page view of nutritionist Bruna Magalhães's website"
       },
       "alandoDigital": {
-        "segment": "branding agency",
+        "segment": "marketing agency",
         "type": "one-page company site",
         "alt": "Full-page view of the Alando Digital agency website"
+      },
+      "gasolinha": {
+        "segment": "my own product",
+        "type": "SaaS landing page",
+        "alt": "Full-page view of the Gasolinha website, a car fuel economy and maintenance app"
       }
     }
   },

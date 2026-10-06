@@ -56,9 +56,14 @@
         "alt": "Página inteira do site da nutricionista Bruna Magalhães"
       },
       "alandoDigital": {
-        "segment": "agência de branding",
+        "segment": "agência de marketing",
         "type": "site institucional one-page",
         "alt": "Página inteira do site da agência Alando Digital"
+      },
+      "gasolinha": {
+        "segment": "produto próprio",
+        "type": "landing page de SaaS",
+        "alt": "Página inteira do site do Gasolinha, app de consumo e manutenção do carro"
       }
     }
   },

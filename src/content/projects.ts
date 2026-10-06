@@ -43,6 +43,17 @@ export type Project = LandingProject | OtherProject;
 
 export const projects: Project[] = [
   {
+    slug: "alando-digital",
+    name: "Alando Digital",
+    url: "https://alandodigital.com.br/",
+    domain: "alandodigital.com.br",
+    captureUrl: "https://alando-digital.vercel.app/",
+    category: "landing",
+    messageKey: "alandoDigital",
+    published: true,
+    screenshot: { src: "/portfolio/alando-digital.webp", width: 1440, height: 10977 },
+  },
+  {
     slug: "bruna-magalhaes",
     name: "Bruna Magalhães",
     url: "https://bruna-magalhaes.vercel.app/",
@@ -54,15 +65,14 @@ export const projects: Project[] = [
     heroCrop: { src: "/portfolio/bruna-magalhaes-hero.webp", width: 1440, height: 1800 },
   },
   {
-    slug: "alando-digital",
-    name: "Alando Digital",
-    url: "https://alandodigital.com.br/",
-    domain: "alandodigital.com.br",
-    captureUrl: "https://alando-digital.vercel.app/",
+    slug: "gasolinha-landing",
+    name: "Gasolinha",
+    url: "https://gasolinha.com.br/",
+    domain: "gasolinha.com.br",
     category: "landing",
-    messageKey: "alandoDigital",
+    messageKey: "gasolinha",
     published: true,
-    screenshot: { src: "/portfolio/alando-digital.webp", width: 1440, height: 10977 },
+    screenshot: { src: "/portfolio/gasolinha.webp", width: 1440, height: 5972 },
   },
   {
     slug: "gasolinha",

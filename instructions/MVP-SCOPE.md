@@ -17,7 +17,7 @@ Publicar uma vitrine one-page, bilíngue e tecnicamente impecável que transform
 | Item | Por quê |
 |---|---|
 | Hero com posicionamento + CTA WhatsApp | É o que segura o visitante nos primeiros 5 segundos |
-| Portfólio de landing pages (Bruna Magalhães, Alando Digital) com preview animado | Prova principal; é o que diferencia de "mais um freela" |
+| Portfólio de landing pages (Alando Digital, Bruna Magalhães, Gasolinha) com preview animado | Prova principal; é o que diferencia de "mais um freela" |
 | Como funciona (com brand-first e papel da IA) | Remove o medo de "não vai ter a minha cara" |
 | Pacotes Essencial e Profissional, preço "a partir de" | Transparência filtra contatos e gera confiança |
 | Sobre mim com credenciais e LinkedIn | Sem depoimentos, é a pessoa real que carrega a confiança |

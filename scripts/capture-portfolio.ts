@@ -6,6 +6,7 @@
  *
  * Uso: pnpm capture
  *      pnpm capture --crops-only   (só refaz os recortes a partir dos .webp existentes, sem abrir os sites)
+ *      pnpm capture --only=<slug>  (captura só esse projeto, sem regerar os outros)
  */
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import path from "node:path";
@@ -22,6 +23,7 @@ const QUALITIES = [80, 75, 70, 65];
 const HERO_CROP_HEIGHT = 1800;
 const HERO_CROP_QUALITY = 80;
 const CROPS_ONLY = process.argv.includes("--crops-only");
+const ONLY = process.argv.find((arg) => arg.startsWith("--only="))?.slice("--only=".length);
 
 // Captura não deve contar como visita no analytics de ninguém.
 const ANALYTICS =
@@ -54,14 +56,15 @@ async function dismissPopups(page: Page) {
 /** Rola até o fim em passos para disparar lazy images e reveals, depois volta ao topo. */
 async function primeLazyContent(page: Page) {
   await page.evaluate(async () => {
+    // "instant": sites com `scroll-behavior: smooth` ainda estariam rolando na hora da captura.
     const step = window.innerHeight * 0.75;
     for (let y = 0; y < document.documentElement.scrollHeight; y += step) {
-      window.scrollTo(0, y);
+      window.scrollTo({ top: y, behavior: "instant" });
       await new Promise((r) => setTimeout(r, 150));
     }
-    window.scrollTo(0, document.documentElement.scrollHeight);
+    window.scrollTo({ top: document.documentElement.scrollHeight, behavior: "instant" });
     await new Promise((r) => setTimeout(r, 400));
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: "instant" });
   });
   await page.waitForLoadState("networkidle");
   await page.evaluate(async () => {
@@ -141,7 +144,10 @@ async function main() {
   await context.route(ANALYTICS, (route) => route.abort());
 
   try {
-    for (const project of landingProjects) {
+    const targets = ONLY ? landingProjects.filter((p) => p.slug === ONLY) : landingProjects;
+    if (targets.length === 0) throw new Error(`nenhum projeto de landing com slug "${ONLY}"`);
+
+    for (const project of targets) {
       const target = project.captureUrl ?? project.url;
       console.log(`\n${project.name}: ${target}`);
 
