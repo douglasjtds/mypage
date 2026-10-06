@@ -2,13 +2,13 @@ import type { Locale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Hero } from "@/components/sections/hero";
 import { Portfolio } from "@/components/sections/portfolio";
+import { Process } from "@/components/sections/process";
 import { SiteFooter } from "@/components/sections/site-footer";
 import { SiteHeader } from "@/components/sections/site-header";
 
 // Provisório (Etapa 05): seções vazias só com id e título, para testar a navegação.
-// Cada uma é substituída pela seção real nas Etapas 08 a 12.
+// Cada uma é substituída pela seção real nas Etapas 09 a 12.
 const placeholderSections = [
-  { id: "como-funciona", title: "process.title" },
   { id: "pacotes", title: "pricing.title" },
   { id: "sobre", title: "about.title" },
   { id: "outros-projetos", title: "projects.title" },
@@ -33,6 +33,7 @@ export default async function Home({ params }: PageProps<"/[locale]">) {
       <main id="conteudo" tabIndex={-1}>
         <Hero locale={locale} />
         <Portfolio locale={locale} />
+        <Process locale={locale} />
         {placeholderSections.map((section) => (
           <section
             key={section.id}
