@@ -61,18 +61,24 @@ export async function Hero({ locale }: { locale: Locale }) {
             style={step(3)}
           >
             <BrowserFrame domain={project.domain}>
-              <Image
-                src={project.heroCrop.src}
-                width={project.heroCrop.width}
-                height={project.heroCrop.height}
-                alt={t("visualAlt")}
-                // LCP: <link rel=preload> no <head> e prioridade alta na própria <img>.
-                preload
-                fetchPriority="high"
-                sizes="(min-width: 1024px) 30vw, (min-width: 768px) 60vw, 100vw"
-                // Mobile e tablet: janela mais baixa (4:3), mostrando o topo. Desktop: o recorte inteiro (4:5).
-                className="aspect-4/3 w-full object-cover object-top lg:aspect-4/5"
-              />
+              {/*
+                Mobile e tablet: janela mais baixa (4:3), mostrando o topo. Desktop: o recorte inteiro (4:5).
+                A proporção fica no contêiner, não na <img>: antes de a imagem chegar, o Chrome às vezes
+                calcula a <img> vazia com outra altura e corrige no quadro seguinte (CLS no carregamento).
+              */}
+              <div className="relative aspect-4/3 lg:aspect-4/5">
+                <Image
+                  src={project.heroCrop.src}
+                  width={project.heroCrop.width}
+                  height={project.heroCrop.height}
+                  alt={t("visualAlt")}
+                  // LCP: <link rel=preload> no <head> e prioridade alta na própria <img>.
+                  preload
+                  fetchPriority="high"
+                  sizes="(min-width: 1024px) 30vw, (min-width: 768px) 60vw, 100vw"
+                  className="absolute inset-0 size-full object-cover object-top"
+                />
+              </div>
             </BrowserFrame>
           </div>
         )}
