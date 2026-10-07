@@ -64,6 +64,11 @@
         "segment": "produto próprio",
         "type": "landing page de SaaS",
         "alt": "Página inteira do site do Gasolinha, app de consumo e manutenção do carro"
+      },
+      "loftMiragem": {
+        "segment": "hospedagem",
+        "type": "landing page de reserva direta",
+        "alt": "Página inteira do site do Loft Miragem, loft para casais em Três Marias, MG"
       }
     }
   },

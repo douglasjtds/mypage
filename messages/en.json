@@ -64,6 +64,11 @@
         "segment": "my own product",
         "type": "SaaS landing page",
         "alt": "Full-page view of the Gasolinha website, a car fuel economy and maintenance app"
+      },
+      "loftMiragem": {
+        "segment": "vacation rental",
+        "type": "direct booking landing page",
+        "alt": "Full-page view of the Loft Miragem website, a couples' loft in Três Marias, Brazil"
       }
     }
   },

@@ -75,6 +75,16 @@ export const projects: Project[] = [
     screenshot: { src: "/portfolio/gasolinha.webp", width: 1440, height: 5972 },
   },
   {
+    slug: "loft-miragem",
+    name: "Loft Miragem",
+    url: "https://loftmiragem.vercel.app/",
+    domain: "loftmiragem.vercel.app",
+    category: "landing",
+    messageKey: "loftMiragem",
+    published: true,
+    screenshot: { src: "/portfolio/loft-miragem.webp", width: 1440, height: 9198 },
+  },
+  {
     slug: "gasolinha",
     name: "Gasolinha",
     url: "https://gasolinha.com.br/",

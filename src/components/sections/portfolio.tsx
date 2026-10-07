@@ -9,7 +9,7 @@ import { scrollDurationMs } from "@/lib/portfolio";
 import { cn } from "@/lib/utils";
 
 // Colunas no desktop (grid de 12). Dois projetos: 7/5, o segundo descido para quebrar o alinhamento.
-// Três ou mais: o primeiro em largura total e o resto em pares.
+// Três ou mais: o primeiro em largura total e o resto em pares; o que sobrar sozinho no fim também vai em largura total.
 function layoutFor(index: number, count: number) {
   if (count === 1) return { className: "lg:col-span-8", sizes: "(min-width: 1280px) 800px, (min-width: 1024px) 63vw, 100vw" };
   if (count === 2) {
@@ -17,7 +17,8 @@ function layoutFor(index: number, count: number) {
       ? { className: "lg:col-span-7", sizes: "(min-width: 1280px) 700px, (min-width: 1024px) 55vw, 100vw" }
       : { className: "lg:col-span-5 lg:mt-32", sizes: "(min-width: 1280px) 500px, (min-width: 1024px) 40vw, 100vw" };
   }
-  return index === 0
+  const trailingAlone = index === count - 1 && count % 2 === 0;
+  return index === 0 || trailingAlone
     ? { className: "lg:col-span-12", sizes: "(min-width: 1280px) 1216px, 100vw" }
     : { className: "lg:col-span-6", sizes: "(min-width: 1280px) 600px, (min-width: 1024px) 48vw, 100vw" };
 }
