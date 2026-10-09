@@ -43,11 +43,12 @@ export async function OtherProjects({ locale }: { locale: Locale }) {
                 <span className="col-start-1 row-start-3 mt-2 max-w-[60ch] text-body text-ink-muted lg:col-span-5 lg:col-start-7 lg:row-start-1 lg:mt-0">
                   {t(`items.${project.messageKey}.description`)}
                 </span>
-                {/* Hover: a seta desloca na diagonal e acende; com movimento reduzido, só a cor. */}
+                {/* Hover: a seta desloca na diagonal e acende. Deslocamento só com mouse (pointer: fine, como o portfólio);
+                    toque, foco e movimento reduzido ficam só com a cor. */}
                 <span
                   data-row-arrow
                   aria-hidden="true"
-                  className="col-start-2 row-start-1 self-center text-ink-muted transition-[color,translate] duration-150 ease-out group-hover:text-accent group-focus-visible:text-accent motion-safe:group-hover:translate-x-0.5 motion-safe:group-hover:-translate-y-0.5 lg:col-start-12 lg:justify-self-end"
+                  className="col-start-2 row-start-1 self-center text-ink-muted transition-[color,translate] duration-150 ease-out group-hover:text-accent group-focus-visible:text-accent [@media(pointer:fine)]:motion-safe:group-hover:translate-x-0.5 [@media(pointer:fine)]:motion-safe:group-hover:-translate-y-0.5 lg:col-start-12 lg:justify-self-end"
                 >
                   <ArrowUpRightIcon strokeWidth={1.5} className="size-5" />
                 </span>
