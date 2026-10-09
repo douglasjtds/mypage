@@ -1,6 +1,8 @@
 import type { Locale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { About } from "@/components/sections/about";
+import { Faq } from "@/components/sections/faq";
+import { FinalCta } from "@/components/sections/final-cta";
 import { Hero } from "@/components/sections/hero";
 import { OtherProjects } from "@/components/sections/other-projects";
 import { Portfolio } from "@/components/sections/portfolio";
@@ -9,10 +11,6 @@ import { Process } from "@/components/sections/process";
 import { SiteFooter } from "@/components/sections/site-footer";
 import { SiteHeader } from "@/components/sections/site-header";
 import { Testimonials } from "@/components/sections/testimonials";
-
-// Provisório (Etapa 05): seção vazia só com id e título, para testar a navegação.
-// Substituída pela seção real na Etapa 12.
-const placeholderSections = [{ id: "duvidas", title: "faq.title" }] as const;
 
 export default async function Home({ params }: PageProps<"/[locale]">) {
   const { locale: param } = await params;
@@ -37,19 +35,8 @@ export default async function Home({ params }: PageProps<"/[locale]">) {
         <About locale={locale} />
         <OtherProjects locale={locale} />
         <Testimonials locale={locale} />
-        {placeholderSections.map((section) => (
-          <section
-            key={section.id}
-            id={section.id}
-            tabIndex={-1}
-            aria-labelledby={`${section.id}-title`}
-            className="mx-auto min-h-svh max-w-content px-4 py-24 md:px-6 lg:px-8"
-          >
-            <h2 id={`${section.id}-title`} className="font-display text-display-l">
-              {t(section.title)}
-            </h2>
-          </section>
-        ))}
+        <Faq locale={locale} />
+        <FinalCta locale={locale} />
       </main>
       <SiteFooter locale={locale} />
     </>
