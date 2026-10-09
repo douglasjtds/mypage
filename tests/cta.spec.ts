@@ -21,7 +21,7 @@ for (const [path, messages] of [
     }) => {
       await page.goto(path);
       const links = await page.locator("a[href*='wa.me']").all();
-      expect(links.length).toBeGreaterThanOrEqual(5);
+      expect(links.length).toBeGreaterThanOrEqual(6);
 
       for (const link of links) {
         const url = new URL((await link.getAttribute("href"))!);
@@ -34,9 +34,9 @@ for (const [path, messages] of [
       }
     });
 
-    test("CTAs dos pacotes presentes, um por pacote", async ({ page }) => {
+    test("um CTA por posição: header, hero, pacotes e CTA final", async ({ page }) => {
       await page.goto(path);
-      for (const position of ["header", "hero", "pricing-essencial", "pricing-profissional"]) {
+      for (const position of ["header", "hero", "pricing-essencial", "pricing-profissional", "final"]) {
         await expect(page.locator(`a[data-cta-position='${position}']`)).toHaveCount(1);
       }
     });
