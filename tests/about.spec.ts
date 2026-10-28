@@ -69,5 +69,21 @@ for (const [path, messages] of [
       );
       expect(animated).toBe(0);
     });
+
+    test("hover na foto: zoom leve com mouse, nada com movimento reduzido", async ({ page }) => {
+      test.skip(!isDesktop(page), "hover só no desktop");
+      const scaleOnHover = async () => {
+        await page.goto(path);
+        const photo = section(page).locator("img");
+        await photo.scrollIntoViewIfNeeded();
+        await photo.hover();
+        await page.waitForTimeout(400);
+        return photo.evaluate((img) => getComputedStyle(img).scale);
+      };
+
+      expect(await scaleOnHover()).toBe("1.03");
+      await page.emulateMedia({ reducedMotion: "reduce" });
+      expect(await scaleOnHover()).toBe("none");
+    });
   });
 }

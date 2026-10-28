@@ -15,15 +15,16 @@ export async function About({ locale }: { locale: Locale }) {
     <section id="sobre" tabIndex={-1} aria-labelledby="sobre-title" className="bg-surface py-24 md:py-28 lg:py-36">
       <div className="mx-auto grid max-w-content grid-cols-1 gap-x-6 gap-y-14 px-4 md:px-6 lg:grid-cols-12 lg:px-8">
         {/* Proporção no contêiner (mesma solução do hero contra CLS); sem raio de avatar. */}
-        <div className="relative aspect-4/5 w-full max-w-60 overflow-hidden rounded-xs md:max-w-xs lg:col-span-4 lg:max-w-none">
+        <div className="group relative aspect-4/5 w-full max-w-60 overflow-hidden rounded-xs md:max-w-xs lg:col-span-4 lg:max-w-none">
           {ABOUT_PHOTO.src ? (
+            // Zoom de 3% dentro do recorte no hover: só com mouse e sem movimento reduzido.
             <Image
               src={ABOUT_PHOTO.src}
               width={ABOUT_PHOTO.width}
               height={ABOUT_PHOTO.height}
               alt={t("photoAlt")}
               sizes="(min-width: 1024px) 30vw, (min-width: 768px) 20rem, 15rem"
-              className="absolute inset-0 size-full object-cover"
+              className="absolute inset-0 size-full object-cover transition-transform duration-250 ease-out pointer-fine:motion-safe:group-hover:scale-103"
             />
           ) : (
             // Slot neutro até existir a foto real (nunca foto de banco ou gerada por IA).

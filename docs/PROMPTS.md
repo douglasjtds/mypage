@@ -610,7 +610,7 @@ Entrega: URL publicada, resultados do Lighthouse em produção, pendências.
 | Prazo padrão de entrega | Etapa 03 (FAQ) | resolvido: 5 a 10 dias úteis a partir do material |
 | Forma de pagamento | Etapa 03 (FAQ) | resolvido: Pix ou cartão, 50% de entrada + 50% na entrega |
 | Rodadas de alteração inclusas | Etapa 03 (FAQ) | resolvido: 3 rodadas antes de publicar |
-| Foto profissional | Etapa 10 | aberto (seção pronta com slot neutro; preencher `ABOUT_PHOTO` em `src/content/site.ts`) |
+| Foto profissional | Etapa 10 | resolvido em 2026-10-28 (`public/about/douglas-tertuliano.webp`, 800×1000, recorte 4:5 sem EXIF) |
 | Umami ou Vercel Web Analytics | Etapa 13 | aberto |
 | Domínio | Etapas 13 e 15 | aberto |
 
