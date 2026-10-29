@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Douglas Tertuliano · Landing pages built on your brand",
-    "description": "Landing pages for freelancers and small businesses, built by a developer with 8 years of experience. Based on your visual identity and delivered in 5 to 10 business days."
+    "description": "Landing pages for freelancers and small businesses, built by a developer with 8 years of experience. Based on your visual identity and delivered in up to 10 business days."
   },
   "a11y": {
     "newTab": "(opens in a new tab)",
@@ -34,13 +34,13 @@
   "hero": {
     "label": "01 / custom landing pages",
     "headline": "A landing page built on <em>your</em> brand, not a template.",
-    "subheadline": "I'm Douglas, a developer with 8 years of experience. I build your page on the identity you already have and deliver it in 5 to 10 business days, ready to bring in WhatsApp messages.",
+    "subheadline": "I'm Douglas Tertuliano, a developer with more than 8 years of experience. I build custom landing pages that stay consistent with your brand's visual identity. Delivery in up to 10 business days, with integrations for your customer contact channels.",
     "ctaPrimary": "Message me on WhatsApp",
     "ctaSecondary": "See my work",
     "facts": {
-      "one": "8 years writing code",
-      "two": "5 to 10 business days",
-      "three": "English and Portuguese"
+      "one": "8 years of experience",
+      "two": "fast, tailored delivery",
+      "three": "service in English and Portuguese"
     },
     "visualAlt": "Section of the landing page Douglas built for nutritionist Bruna Magalhães"
   },
@@ -182,7 +182,7 @@
     "items": {
       "q1": {
         "question": "How long does it take?",
-        "answer": "5 to 10 business days, counted from when I receive your material. The exact timeline depends on complexity, and I'll give it to you before we start."
+        "answer": "Up to 10 business days, counted from when I receive your material. The exact timeline depends on complexity, and I'll give it to you before we start."
       },
       "q2": {
         "question": "What do I need to send?",
