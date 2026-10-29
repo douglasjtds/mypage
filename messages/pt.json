@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Douglas Tertuliano · Landing pages com a cara da sua marca",
-    "description": "Landing pages para autônomos e pequenos negócios, feitas por um desenvolvedor com 8 anos de experiência. Construídas sobre a sua identidade visual e entregues em 5 a 10 dias úteis."
+    "description": "Landing pages para autônomos e pequenos negócios, feitas por um desenvolvedor com 8 anos de experiência. Construídas sobre a sua identidade visual e entregues em até 10 dias úteis."
   },
   "a11y": {
     "newTab": "(abre em nova aba)",
@@ -34,20 +34,20 @@
   "hero": {
     "label": "01 / landing pages sob medida",
     "headline": "Uma landing page com a <em>cara</em> da sua marca.",
-    "subheadline": "Sou o Douglas, desenvolvedor há 8 anos. Construo a página em cima da identidade que você já tem e entrego em 5 a 10 dias úteis, pronta para receber contatos no WhatsApp.",
+    "subheadline": "Sou Douglas Tertuliano, desenvolvedor há mais de 8 anos. Construo landing pages personalizadas e que têm coerência com a identidade visual da sua marca. Prazo de entrega em até 10 dias úteis, com integrações para canais de atendimento.",
     "ctaPrimary": "Conversar no WhatsApp",
     "ctaSecondary": "Ver portfólio",
     "facts": {
-      "one": "8 anos de desenvolvimento",
-      "two": "5 a 10 dias úteis",
-      "three": "atendo em PT e EN"
+      "one": "8 anos de experiência",
+      "two": "entrega rápida e personalizada",
+      "three": "atendimento em PT e EN"
     },
     "visualAlt": "Recorte da landing page da nutricionista Bruna Magalhães, feita por Douglas"
   },
   "portfolio": {
     "label": "02 / portfólio",
     "title": "Páginas no ar, de clientes reais",
-    "support": "Cada uma partiu da marca do cliente. Abra o site para ver a página completa.",
+    "support": "Cada página foi construída e pensada de acordo com a identidade visual do cliente, mantendo a originalidade de cada marca. Acesse os sites e confira!",
     "viewSite": "ver site",
     "projects": {
       "brunaMagalhaes": {
@@ -182,7 +182,7 @@
     "items": {
       "q1": {
         "question": "Quanto tempo leva?",
-        "answer": "De 5 a 10 dias úteis, contados a partir do momento em que recebo o material. O prazo exato depende da complexidade, e eu te passo antes de começar."
+        "answer": "Até 10 dias úteis, contados a partir do momento em que recebo o material. O prazo exato depende da complexidade, e eu te passo antes de começar."
       },
       "q2": {
         "question": "O que eu preciso enviar?",
